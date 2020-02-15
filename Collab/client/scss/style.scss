@@ -189,6 +189,28 @@ $done--choosing-interest-btn: #37515b;
   &--doneChoosing:hover {
     background-color: white;
     color: black;
+    
+  }
+}
+
+.addInterest{
+  float:right;
+  input{
+    border: 1px solid $all-font-color-primary;
+    border-radius: 0.3rem;
+    padding: 0.4rem;
+  }
+  input:focus{
+    outline: none;
+  }
+  .btn{
+    background: $all-font-color-secondary;
+    color: white;
+    border: 1px solid $all-font-color-secondary;
+  }
+  .btn:hover{
+    background: white;
+    color: black;
   }
 }
 
@@ -206,6 +228,9 @@ $done--choosing-interest-btn: #37515b;
         margin-top: 0.5rem;
       }
     }
+  }
+  .addInterest{
+    float:left;
   }
 }
 
@@ -494,7 +519,6 @@ $done--choosing-interest-btn: #37515b;
 
 
 // research-project-template.html
-
 .detailContainer{
   &__img{
     img{

@@ -112,6 +112,22 @@
   background-color: white;
   color: black; }
 
+.addInterest {
+  float: right; }
+  .addInterest input {
+    border: 1px solid #39424e;
+    border-radius: 0.3rem;
+    padding: 0.4rem; }
+  .addInterest input:focus {
+    outline: none; }
+  .addInterest .btn {
+    background: #738f93;
+    color: white;
+    border: 1px solid #738f93; }
+  .addInterest .btn:hover {
+    background: white;
+    color: black; }
+
 @media (max-width: 768px) {
   .interestContainer h2 {
     font-size: 24px !important; }
@@ -121,7 +137,10 @@
       margin-right: 0.1rem;
       padding: 0.8rem;
       font-size: 13px;
-      margin-top: 0.5rem; } }
+      margin-top: 0.5rem; }
+
+  .addInterest {
+    float: left; } }
 .dropdown-toggle:empty::after {
   display: none; }
 
