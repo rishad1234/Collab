@@ -1,0 +1,234 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <!-- link css -->
+    <link rel="stylesheet" href="scss/style.css">
+    <!-- font awesome -->
+    <script src="https://kit.fontawesome.com/1685df272a.js"></script>
+
+    <title>Collab | My Profile</title>
+</head>
+
+<body style="background: #f1f1f1;">
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container">
+            <a class="navbar-brand" href="newsfeed.html">Collab.</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse navbar__menu" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <div class="dropdown d-none d-lg-block">
+                            <span><a class="nav-link" href="">Robert C. Merton</a></span>
+                            <div class="dropdown-content">
+                                <ul>
+                                    <li><a href="profile-me.html">Profile</a></li>
+                                    <li><a href="login.html">Logout</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <a class="nav-link d-block d-lg-none" href="profile-me.html">Profile</a>
+                    </li>
+                    <li class="nav-item d-block d-lg-none">
+                        <a href="login.html" class="nav-link">Logout</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container portfolioContainer mt-5 mb-5">
+        <div class="row">
+            <div class="col-sm-8">
+                <!-- intro - information -->
+                <div class="containIntroInfo">
+                    <div class="containIntroInfo__coverImg">
+                        <img src="images/profile-cover-img.jpg" alt="">
+                    </div>
+                    <div class="containIntroInfo__profileImg">
+                        <img src="images/profile-profile-img.jpg" alt="">
+                    </div>
+                    <div class="containIntroInfo__info">
+                        <a href="edit-profile-me-introInfo.html"><i class="fas fa-edit float-right containIntroInfo__info__edit"></i></a>
+                        <h4 class="containIntroInfo__info__name">Robert C. Merton</h4>
+                        <p class="containIntroInfo__info__designation">Professor</p>
+                        <p class="containIntroInfo__info__institution">Massachusetts Institute of Technology</p>
+                        <p class="containIntroInfo__info__country">United States</p>
+                    </div>
+                </div>
+                <div class="about">
+                    <a href="edit-profile-me-about.html"><i class="fas fa-edit float-right about__edit"></i></a>
+                    <h4>About</h4>
+                    <p>
+                        <!-- limit: 50 -->
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate itaque illum maxime earum
+                        alias esse animi reprehenderit obcaecati molestias cum cumque, commodi culpa aspernatur,
+                        consectetur quod quo sapiente nemo quis eligendi? Eius quas laudantium nihil tenetur atque
+                        dolor. Debitis hic porro molestias nesciunt repudiandae ipsum tempora deleniti eveniet
+                        laudantium voluptates.</p>
+                </div>
+                <div class="research">
+                    <a href="edit-profile-me-addResearch.html" class="btn research__btn active float-right" role="button" aria-pressed="true">Add New</a>
+                    <h4>Research</h4>
+                    <!-- research - 1 -->
+                    <div class="row no-gutters research__each mt-3" onclick="location.href='#';">
+                        <div class="col-lg-3 research__each__img">
+                            <img src="images/research-img.jpg" alt="">
+                        </div>
+                        <div class="col-lg-9 research__each__info">
+                            <h5>
+                                <!-- limit: 8 words -->
+                                Title of research / published paper
+                            </h5>
+                            <p>
+                                <!-- limit:40 words -->
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat culpa illo quaerat quis
+                                ratione earum pariatur, sunt eaque nihil deleniti porro reiciendis dolorem, voluptatum
+                                odit tempore perspiciatis eos reprehenderit deserunt numquam recusandae incidunt
+                                nesciunt saepe eius. Adipisci, dolorem provident. Expedita. <a href="#">more</a> </p>
+                        </div>
+                    </div>
+                    <hr>
+                    <!-- research - 2 -->
+                    <div class="row no-gutters research__each mt-3" onclick="location.href='#';">
+                        <div class="col-lg-3 research__each__img">
+                            <img src="images/research-02.jpg" alt="">
+                        </div>
+                        <div class="col-lg-9 research__each__info">
+                            <h5>
+                                <!-- limit: 8 words -->
+                                Title of research / published paper
+                            </h5>
+                            <p>
+                                <!-- limit:40 -->
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat culpa illo quaerat quis
+                                ratione earum pariatur, sunt eaque nihil deleniti porro reiciendis dolorem, voluptatum
+                                odit tempore perspiciatis eos reprehenderit deserunt numquam recusandae incidunt
+                                nesciunt saepe eius. Adipisci, dolorem provident. Expedita. <a href="#">more</a> </p>
+                        </div>
+                    </div>
+                    <hr>
+                    <!-- research - 3 -->
+                    <div class="row no-gutters research__each mt-3" onclick="location.href='#';">
+                        <div class="col-lg-3 research__each__img">
+                            <img src="images/research-03.jpg" alt="">
+                        </div>
+                        <div class="col-lg-9 research__each__info">
+                            <h5>
+                                <!-- limit: 8 words -->
+                                Title of research / published paper
+                            </h5>
+                            <p>
+                                <!-- limit:40 -->
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat culpa illo quaerat quis
+                                ratione earum pariatur, sunt eaque nihil deleniti porro reiciendis dolorem, voluptatum
+                                odit tempore perspiciatis eos reprehenderit deserunt numquam recusandae incidunt
+                                nesciunt saepe eius. Adipisci, dolorem provident. Expedita. <a href="#">more</a> </p>
+                        </div>
+                    </div>
+                    <hr>
+                </div>
+                <div class="projects">
+                    <a href="edit-profile-me-addProjects.html" class="btn projects__btn active float-right" role="button" aria-pressed="true">Add New</a>
+                    <h4>Projects</h4>
+                    <!-- projeect - 1 -->
+                    <div class="row no-gutters projects__each mt-3" onclick="location.href='#';">
+                        <div class="col-lg-3 projects__each__img">
+                            <img src="images/project-img.jpg" alt="">
+                        </div>
+                        <div class="col-lg-9 projects__each__info">
+                            <h5>
+                                <!-- limit: 8 words -->
+                                Title of Project
+                            </h5>
+                            <p>
+                                <!-- limit:40 words -->
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat culpa illo quaerat quis
+                                ratione earum pariatur, sunt eaque nihil deleniti porro reiciendis dolorem, voluptatum
+                                odit tempore perspiciatis eos reprehenderit deserunt numquam recusandae incidunt
+                                nesciunt saepe eius. Adipisci, dolorem provident. Expedita. <a href="#">more</a> </p>
+                        </div>
+                    </div>
+                    <hr>
+                    <!-- projeect - 2 -->
+                    <div class="row no-gutters projects__each mt-3" onclick="location.href='#';">
+                        <div class="col-lg-3 projects__each__img">
+                            <img src="images/project-img.jpg" alt="">
+                        </div>
+                        <div class="col-lg-9 projects__each__info">
+                            <h5>
+                                <!-- limit: 8 words -->
+                                Title of Project
+                            </h5>
+                            <p>
+                                <!-- limit:40 words -->
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat culpa illo quaerat quis
+                                ratione earum pariatur, sunt eaque nihil deleniti porro reiciendis dolorem, voluptatum
+                                odit tempore perspiciatis eos reprehenderit deserunt numquam recusandae incidunt
+                                nesciunt saepe eius. Adipisci, dolorem provident. Expedita. <a href="#">more</a> </p>
+                        </div>
+                    </div>
+                    <hr>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="profileInterests">
+                    <i class="fas fa-edit float-right profileInterests__edit"></i>
+                    <h3>Interests</h3>
+                    <div class="profileInterests__containLists">
+                        <ul class="profileInterests__containLists__lists">
+                            <li>Machine Learning</li>
+                            <li>Artificial Intelligent</li>
+                            <li>Algorithm</li>
+                            <li>Data Science</li>
+                            <li>Image Processing</li>
+                            <li>Internet of things</li>
+                            <li>Machine Learning</li>
+                            <li>Artificial Intelligent</li>
+                            <li>Algorithm</li>
+                            <li>Data Science</li>
+                            <li>Image Processing</li>
+                            <li>Internet of things</li>
+                            <li>Machine Learning</li>
+                            <li>Artificial Intelligent</li>
+                            <li>Algorithm</li>
+                            <li>Data Science</li>
+                            <li>Image Processing</li>
+                            <li>Internet of things</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.4.1.js"
+        integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
+    <!-- local -->
+    <script src="js/profile-me.js"></script>
+</body>
+
+</html>
