@@ -326,28 +326,14 @@
   padding: 1.2rem;
   border-radius: 0.5rem; }
 
-.detailContainer__img img {
+.researchTemplate__holder img {
   width: 100%;
-  height: 18rem;
-  object-fit: cover; }
-.detailContainer__title h3 {
-  display: inline-block;
-  float: left; }
-.detailContainer__title button {
-  display: inline-block;
-  float: right; }
-.detailContainer__description__video {
-  width: 100%;
-  height: 28rem;
+  height: 400px;
   object-fit: cover; }
 
-@media (max-width: 768px) {
-  .detailContainer__title h3 {
-    display: inline-block;
-    float: left; }
-  .detailContainer__title button {
-    margin-top: 0.5rem;
-    display: inline-block;
-    float: left; } }
+.editorResearch__holder__form .form-group {
+  background: white;
+  padding: 1rem;
+  border-radius: 0.5rem; }
 
 /*# sourceMappingURL=style.css.map */

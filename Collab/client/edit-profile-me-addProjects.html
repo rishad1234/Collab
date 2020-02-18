@@ -22,7 +22,6 @@
 
     <!-- text editor -->
     <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-    <!-- <link rel="stylesheet" href="css/richtext.min.css"> -->
     <link rel="stylesheet" href="scss/richtext.min.css">
     <script src="js/jquery.richtext.min.js"></script>
 
@@ -64,43 +63,30 @@
     </nav>
 
 
-    <!-- <div class="container mt-5 containsForm">
-        <div class="row">
-            <div class="col-sm-7">
-                <h3>Add New Project</h3>
-                <form class="mt-3">
-                    <div class="form-group">
-                        <label for="thumbnail-research">Browse Image</label>
-                        <input type="file" class="form-control-file" id="thumbnail-research">
+    <div class="container mt-3">
+        <div class="row  editorResearch">
+            <div class="col-sm-12 editorResearch__holder">
+                <div class="row">
+                    <div class="col-sm-6 editorResearch__holder__form">
+                        <form class="mt-3">
+                            <div class="form-group">
+                                <label for="thumbnailImg">Choose Thumbnail for your project</label>
+                                <input type="file" class="form-control-file" id="thumbnailImg">
+                            </div>
+                            <div class="form-group">
+                                <label for="title">Enter Title</label>
+                                <input type="text" class="form-control" id="title" placeholder="Enter Title">
+                            </div>
+                            <div class="form-group">
+                                <label for="excerptArtcile">Enter Excerpt</label>
+                                <textarea class="form-control" id="excerptArtcile" rows="5" maxlength="200"></textarea>
+                            </div>
+                        </form>
                     </div>
-                    <div class="form-group">
-                        <label for="name">Project Title</label>
-                        <input type="text" class="form-control" id="name" placeholder="Ex. Presence of heart disease with Neural Network">
-                    </div>
-                    <div class="form-group">
-                        <label for="excerpt">Enter Excerpt</label>
-                        <textarea class="form-control" id="excerpt" rows="3"></textarea>
-                    </div>
-                    <div class="form-group">
-                        <label for="research-work">Enter Description</label>
-                        <textarea class="form-control" id="excerpt" rows="13"></textarea>
-                    </div>
-                    <div class="form-group">
-                        <label for="thumbnail-research">Upload Other file (If have any - PDF/MP4)</label>
-                        <input type="file" class="form-control-file" id="thumbnail-research">
-                    </div>
-                </form>
-            </div>
-            <div class="col-sm-5">
-                <button type="submit" class="btn btn-outline-dark float-right">Save Information</button>
-            </div>
-        </div>
-    </div> -->
-    <div class="container mt-5">
-        <div class="row">
-            <div class="col-sm-12">
+                    <div class="col-sm-6"></div>
+                </div>
                 <textarea class="content" name="example"></textarea>
-                <button type="button" class="btn btn-outline-dark getValEditor"><i class="far fa-trash-alt"></i> Click me</button>
+                <button type="button" class="btn btn-outline-dark getValEditor mt-3 mb-5">Submit</button>
             </div>
         </div>
     </div>
@@ -121,15 +107,8 @@
         integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
         crossorigin="anonymous"></script>
     <!-- local -->
-    <script>
-        $('.content').richText();
-
-        $(".getValEditor").click(function(){
-            $('.content').val('<div>Hello 123</div>').trigger('change');
-            // let x = $('.content').val();
-            // console.log(x);
-        });
-    </script>
+    <script src="js/handle-addnew-research.js"></script>
+    
 </body>
 
 </html>

@@ -519,32 +519,25 @@ $done--choosing-interest-btn: #37515b;
 
 
 // research-project-template.html
-.detailContainer{
-  &__img{
+.researchTemplate{
+  &__holder{
     img{
-      width:100%;
-      height: 18rem;
-      object-fit: cover;
-    }
-  }
-  &__title{
-    h3{display: inline-block; float:left;}
-    button{display: inline-block;float:right;}
-  }
-  &__description{
-    &__video{
       width: 100%;
-      height: 28rem;
+      height: 400px;
       object-fit: cover;
     }
   }
 }
 
-@media(max-width:768px){
-  .detailContainer{
-    &__title{
-      h3{display: inline-block; float:left;}
-      button{margin-top: 0.5rem;display: inline-block;float:left;}
+// edit-profile-me-addResearch.html
+.editorResearch{
+  &__holder{
+    &__form{
+      .form-group{
+        background: white;
+        padding:1rem;
+        border-radius: 0.5rem;
+      }
     }
   }
 }
