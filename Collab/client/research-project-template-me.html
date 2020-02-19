@@ -34,7 +34,7 @@
     <title>Collab | Research / Projects</title>
 </head>
 
-<body style="background: #f1f1f1;">
+<body style="background: #f1f1f1">
 
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container">
@@ -82,9 +82,9 @@
                     </p>
                 </div>
                 <textarea id="editor_edit" class="content d-none" name="example"></textarea>
+                <button type="button" class="btn btn-outline-dark submit-after-edit mt-3">Submit</button>
             </div>
             <!-- <div class="col-sm-5">
-                
                 <button type="button" class="btn btn-outline-dark getValEditor mt-3 mb-5">Submit</button>
             </div> -->
         </div>
@@ -106,23 +106,33 @@
         crossorigin="anonymous"></script>
     <!-- local -->
     <script>
+        $(".submit-after-edit").css("display","none");
         let editor_height = $(window).height()- $(".navbar").height();
         $(".edit_article").click(function(){
             let getInsideHTML = $(".researchTemplate__holder").html();
             $(".researchTemplate__holder").addClass("d-none");
             $(".content").removeClass("d-none");
             $(".content").css("display","block");
-            console.log(getInsideHTML);
             $('.content').richText({
                 code: true,
                 height: editor_height
             });
             $('.content').val(getInsideHTML).trigger('change');
             $(this).css("display","none");
-        })
-        // // initializing the editor with specific height;
-        
+            $(".submit-after-edit").css("display","block");
+        });
 
+        $(".submit-after-edit").click(function(){
+            let getAfterEdit = $(".content").val();
+            $(".researchTemplate__holder").addClass("d-block");
+            $(".edit_article").css("display","block");
+            $(".researchTemplate__holder").html(getAfterEdit);
+            $("textarea").css("display","none");
+            console.log($(".content"));
+            $(".submit-after-edit").css("display","none");
+        });
+
+        // // initializing the editor with specific height;
         // // after clikc on submit button following function takes the value from editor and stores in variable
         // $(".getValEditor").click(function () {
         //     // let contentOfEditor = $('.content').val();
