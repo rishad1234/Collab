@@ -328,7 +328,7 @@
 
 .researchTemplate__holder img {
   width: 100%;
-  height: 400px;
+  height: 100%;
   object-fit: cover; }
 
 .editorResearch__holder__form .form-group {
