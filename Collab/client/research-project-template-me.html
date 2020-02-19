@@ -68,12 +68,23 @@
     <div class="container researchTemplate mt-5 mb-5">
         <div class="row">
             <div class="col-sm-12">
-                <div class="researchTemplate__holder">
-                    
+                <button type="button" class="btn btn-outline-dark edit_article"><i class="fas fa-edit"></i>Edit</button>
+                <div class="researchTemplate__holder mt-3">
+                    <img style="width:100%" src="images/profile-cover-img.jpg" alt="">
+                    <br><br>
+                    <h3>Title of research paper/ published paper/ projects</h3>
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam, blanditiis voluptatum! Enim vel nam obcaecati officiis harum ab facere deserunt reiciendis velit impedit temporibus nulla consectetur magni, iusto quos, doloribus suscipit libero autem maiores provident accusamus voluptate! Iste ut magni id ab asperiores odit, necessitatibus nesciunt earum ratione. Deserunt dicta nostrum illum cumque sit sint reiciendis, nulla voluptatem fuga in, deleniti odio neque, numquam animi veritatis! Incidunt, vel consectetur, perspiciatis, amet dolore maxime facilis magni numquam animi libero optio ex laborum. Nisi libero maiores accusamus quia eaque doloremque cupiditate magnam. Culpa laboriosam debitis earum ratione repellendus rerum facere repudiandae non deserunt eveniet fugiat vero distinctio, vel animi nesciunt voluptatem accusantium corrupti molestiae doloremque? Molestiae quia vel ad officia nobis excepturi. Veniam, et.
+                    </p>
+                    <br><br>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odio labore suscipit, assumenda ipsa illum culpa beatae tenetur earum expedita consequatur dolores laudantium, possimus id dolorem blanditiis aspernatur eum doloribus reprehenderit tempora dolor. Suscipit iste ut consequatur, quod doloribus facilis, aliquid dolorum quidem odit voluptas quas assumenda nobis provident eligendi itaque nemo facere deserunt? Soluta delectus nulla repellat qui tempore nam dolorem itaque exercitationem necessitatibus reprehenderit quidem provident accusantium optio accusamus doloremque tempora fugit quas dolore molestiae, veniam temporibus dolor hic inventore nesciunt. Maxime quam laborum, incidunt doloremque quos tempora saepe voluptatibus, cupiditate qui exercitationem, provident consequatur! Earum, ut velit. Commodi eligendi ipsum id voluptatum asperiores quo similique libero nemo mollitia iste rerum magnam minus qui adipisci, alias aut autem! Ut vero itaque iure adipisci, corrupti sequi praesentium asperiores nisi sit, aperiam soluta beatae dolor amet ipsa omnis necessitatibus aliquam corporis sunt facilis maiores doloribus tenetur facere. Accusamus, voluptatem illo similique a deleniti libero id repellendus animi vel itaque, omnis numquam cupiditate, provident qui impedit aperiam facilis dolor! Dolorem architecto culpa eum quod vitae, nobis illum quis consectetur repellendus nisi rem unde veniam id at aspernatur distinctio sequi nihil adipisci quibusdam illo similique. Totam vitae debitis inventore tenetur velit in dolor mollitia obcaecati eligendi, rerum, enim est impedit possimus deleniti sapiente qui at natus aspernatur nemo ad ipsa? Earum facilis id molestias exercitationem velit provident at voluptatum praesentium, nobis rem dicta omnis? Voluptate, itaque?
+                    </p>
                 </div>
+                <textarea id="editor_edit" class="content d-none" name="example"></textarea>
             </div>
             <!-- <div class="col-sm-5">
-                <textarea class="content" name="example"></textarea>
+                
                 <button type="button" class="btn btn-outline-dark getValEditor mt-3 mb-5">Submit</button>
             </div> -->
         </div>
@@ -95,16 +106,31 @@
         crossorigin="anonymous"></script>
     <!-- local -->
     <script>
+        let editor_height = $(window).height()- $(".navbar").height();
+        $(".edit_article").click(function(){
+            let getInsideHTML = $(".researchTemplate__holder").html();
+            $(".researchTemplate__holder").addClass("d-none");
+            $(".content").removeClass("d-none");
+            $(".content").css("display","block");
+            console.log(getInsideHTML);
+            $('.content').richText({
+                code: true,
+                height: editor_height
+            });
+            $('.content').val(getInsideHTML).trigger('change');
+            $(this).css("display","none");
+        })
         // // initializing the editor with specific height;
-        // $('.content').richText();
+        
 
         // // after clikc on submit button following function takes the value from editor and stores in variable
         // $(".getValEditor").click(function () {
-        //     let contentOfEditor = $('.content').val();
+        //     // let contentOfEditor = $('.content').val();
         //     // $('.content').val('<div>Hello 123</div>').trigger('change');
-        //     $(".researchTemplate__holder").html(contentOfEditor);
+        //     // $(".researchTemplate__holder").html(contentOfEditor);
         //     // $(".normal-div").find("img").css("width","100%");
         // });
+        
     </script>
 </body>
 
