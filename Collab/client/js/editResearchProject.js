@@ -1,6 +1,7 @@
 $(".submit-after-edit").css("display", "none");
 let editor_height = $(window).height() - $(".navbar").height();
 
+
 $('.content').richText({
     height: editor_height
 });
