@@ -6,6 +6,7 @@ $('.content').richText({
     height: editor_height
 });
 $(".richText").css("display", "none");
+$(".richText").css("margin-top", "1rem");
 
 $(".edit_article").click(function () {
 
@@ -31,7 +32,7 @@ $(".submit-after-edit").click(function () {
     $(".richText").css("display", "none");
 
     $(".researchTemplate__holder").css("display", "block");
-    $(".edit_article").css("display", "block");
+    $(".edit_article").css("display", "inline-block");
 
     // submit after edit button off
     $(".submit-after-edit").css("display", "none");
