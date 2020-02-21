@@ -19,7 +19,7 @@
 
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container">
-            <a class="navbar-brand" href="#">Collab.</a>
+            <a class="navbar-brand" href="{{ route('welcome') }}">Collab.</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -27,7 +27,7 @@
             <div class="collapse navbar-collapse navbar__menu" id="navbarNav">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item">
-                        <a class="nav-link navbar__menu--login" href="login.html">Log in</a>
+                        <a class="nav-link navbar__menu--login" href="{{ route('login') }}">Log in</a>
                     </li>
                 </ul>
             </div>
