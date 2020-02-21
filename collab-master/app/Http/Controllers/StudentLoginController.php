@@ -17,7 +17,7 @@ class StudentLoginController extends Controller
     {
         // $data = request()->validate([
         //     'name' => 'required|max:255',
-        //     'email' => 'required|email',
+        //     'email' => 'required|email|unique',
         //     'password' => 'required|min:8',
         //     'institution_name' => 'required|max:255',
         //     ]);

@@ -37,6 +37,15 @@
             <div class="col-sm-12 registerFormContainer__block">
                 <div class="registerFormContainer__block__holdBlock">
                     <form method="POST" action="{{ route('student_login_post')}}">
+                        @if ($errors->any())
+                            <div class="alert alert-danger">
+                                <ul>
+                                    @foreach ($errors->all() as $error)
+                                        <li>{{ $error }}</li>
+                                    @endforeach
+                                </ul>
+                            </div>
+                        @endif
                         @csrf
                         <div class="form-group">
                             <label for="InputEmail">Email address</label>
