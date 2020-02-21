@@ -23,7 +23,15 @@ Route::get('/login', function () {
 Route::get('/professor-login', 'ProfessorLoginController@index')->name('professor_login');
 Route::get('/student-login', 'StudentLoginController@index')->name('student_login');
 
+Route::post('/professor-login', 'ProfessorLoginController@store')->name('professor_login_post');
+Route::post('/student-login', 'StudentLoginController@store')->name('student_login_post');
+
+
+
 Route::get('/professor-signup', 'ProfessorSignUpController@index')->name('professor_signup');
 Route::get('/student-signup', 'StudentSignUpController@index')->name('student_signup');
+
+Route::post('/professor-signup', 'ProfessorSignUpController@store')->name('professor_signup_post');
+Route::post('/student-signup', 'StudentSignUpController@store')->name('student_signup_post');
 
 Route::get('/home', 'HomeController@index')->name('home');

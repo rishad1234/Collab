@@ -38,33 +38,34 @@
         <div class="row h-100">
             <div class="col-sm-12 registerFormContainer__block">
                 <div class="registerFormContainer__block__holdBlock">
-                    <form>
+                    <form method="POST" action="{{route('professor_signup_post')}}">
+                        @csrf
                         <div class="form-group">
                             <label for="InputName">Name</label>
                             <input type="text" class="form-control" id="InputName"
-                                placeholder="Password">
+                                placeholder="Enter full name" name="name">
                         </div>
                         <div class="form-group">
                             <label for="InputInstitutionName">Institution Name</label>
                             <input type="text" class="form-control" id="InputInstitutionName"
-                                placeholder="Institution Name">
+                                placeholder="Institution Name" name="institution_name">
                         </div>
                         <div class="form-group">
                             <label for="InputDesignation">Designation</label>
                             <input type="text" class="form-control" id="InputDesignation"
-                                placeholder="Designation">
+                                placeholder="Designation" name="designation">
                         </div>
                         <div class="form-group">
                             <label for="InputEmail">Institutional Email address</label>
                             <input type="email" class="form-control" id="InputEmail"
-                                aria-describedby="emailHelp" placeholder="Enter Institutional email">
+                                aria-describedby="emailHelp" placeholder="Enter Institutional email" name="email">
                         </div>
                         <div class="form-group">
                             <label for="InputPassword">Password</label>
                             <input type="password" class="form-control" id="InputPassword"
-                                placeholder="Password">
+                                placeholder="Password" name="password">
                         </div>
-                        <a href="interest.html" class="btn registerFormContainer__block__holdBlock--submit" role="button" aria-pressed="true">Register as professor</a>
+                        <button type="submit" class="btn registerFormContainer__block__holdBlock--submit" role="button" aria-pressed="true">Register as professor</button>
                     </form>
                 </div>
             </div>

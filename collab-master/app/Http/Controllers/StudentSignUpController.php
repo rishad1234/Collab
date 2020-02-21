@@ -10,4 +10,9 @@ class StudentSignUpController extends Controller
     {
         return view('signup.student');
     }
+
+    public function store(Request $request)
+    {
+        return dd($request['name']);
+    }
 }

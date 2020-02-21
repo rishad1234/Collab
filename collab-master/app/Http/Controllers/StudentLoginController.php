@@ -10,4 +10,9 @@ class StudentLoginController extends Controller
     {
         return view('login.student');
     }
+
+    public function store(Request $request)
+    {
+        dd($request['email']);
+    }
 }
