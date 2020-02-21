@@ -40,8 +40,8 @@
                         <div class="landingCover__left__block">
                             <p>A platform that helps to create collaborations between professors and students according to their field of interests by helping them to create an individual profile, an organised news feed and communication methods.</p>
                         </div>
-                        <a href="sign-up-prof.html" class="btn btn-lg landingCover__left--registerTeacher" role="button" aria-pressed="true">Sign up as professor</a>
-                        <a href="sign-up-stud.html" class="btn btn-lg landingCover__left--registerStudent" role="button" aria-pressed="true">Sign up as student</a>
+                        <a href="{{ route('professor_signup') }}" class="btn btn-lg landingCover__left--registerTeacher" role="button" aria-pressed="true">Sign up as professor</a>
+                        <a href="{{ route('student_signup') }}" class="btn btn-lg landingCover__left--registerStudent" role="button" aria-pressed="true">Sign up as student</a>
                     </div>
                     <div class="col-sm-6 landingCover__right">
                         <img class="d-none d-md-block" src="images/index-cover-img.png" alt="">

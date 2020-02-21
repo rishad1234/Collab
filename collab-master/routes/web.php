@@ -23,4 +23,7 @@ Route::get('/login', function () {
 Route::get('/professor-login', 'ProfessorLoginController@index')->name('professor_login');
 Route::get('/student-login', 'StudentLoginController@index')->name('student_login');
 
+Route::get('/professor-signup', 'ProfessorSignUpController@index')->name('professor_signup');
+Route::get('/student-signup', 'StudentSignUpController@index')->name('student_signup');
+
 Route::get('/home', 'HomeController@index')->name('home');
