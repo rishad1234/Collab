@@ -23,8 +23,8 @@ Route::get('/login', function () {
 Route::get('/professor-login', 'ProfessorLoginController@index')->name('professor_login');
 Route::get('/student-login', 'StudentLoginController@index')->name('student_login');
 
-Route::post('/professor-login', 'ProfessorLoginController@store')->name('professor_login_post');
-Route::post('/student-login', 'StudentLoginController@store')->name('student_login_post');
+Route::post('/professor-login', 'ProfessorLoginController@login')->name('professor_login_post');
+Route::post('/student-login', 'StudentLoginController@login')->name('student_login_post');
 
 
 

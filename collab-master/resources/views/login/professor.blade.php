@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
         integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <!-- link css -->
-    <link rel="stylesheet" href="scss/style.css">
+    <link rel="stylesheet" href="{{asset('scss/style.css')}}">
 
     <title>Collab | Sign In - professor</title>
 </head>
@@ -39,6 +39,15 @@
             <div class="col-sm-12 registerFormContainer__block">
                 <div class="registerFormContainer__block__holdBlock">
                     <form method="POST" action="{{ route('professor_login_post')}}">
+                        @if ($errors->any())
+                            <div class="alert alert-danger">
+                                <ul>
+                                    @foreach ($errors->all() as $error)
+                                        <li>{{ $error }}</li>
+                                    @endforeach
+                                </ul>
+                            </div>
+                        @endif
                         @csrf
                         <div class="form-group">
                             <label for="InputEmail">Institutional Email address</label>
@@ -72,7 +81,7 @@
         integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
         crossorigin="anonymous"></script>
     <!-- local -->
-    <script src="js/sign-up-prof.js"></script>
+    <script src="{{asset('js/sign-up-prof.js')}}"></script>
 </body>
 
 </html>

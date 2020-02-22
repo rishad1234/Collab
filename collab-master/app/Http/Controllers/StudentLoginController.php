@@ -13,25 +13,20 @@ class StudentLoginController extends Controller
         return view('login.student');
     }
 
-    public function store(Request $request)
+    public function login(Request $request)
     {
-        // $data = request()->validate([
-        //     'name' => 'required|max:255',
-        //     'email' => 'required|email|unique',
-        //     'password' => 'required|min:8',
-        //     'institution_name' => 'required|max:255',
-        //     ]);
-
-        // $data['user_role'] = 2;
-        // $student = new User;
-
-        // $student->name = $data['name'];
-        // $student->email = $data['email'];
-        // $student->password = Hash::make($data['password']);
-        // $student->institution_name = $data['institution_name'];
-        // $student->user_role = $data['user_role'];
-
-        // $student->save();
-        // return dd($student);
+        $data = request()->validate([
+            'email' => 'required|email',
+            'password' => 'required|min:8',
+            ]);
+        $student = User::where('email', $data['email'])->first();
+        
+        if (Hash::check($data['password'], $student->password)) 
+        {
+            dd('logged in');
+        }else
+        {
+            dd('not logged in');
+        }
     }
 }
