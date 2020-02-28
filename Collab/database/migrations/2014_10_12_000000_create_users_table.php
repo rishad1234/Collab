@@ -21,7 +21,6 @@ class CreateUsersTable extends Migration
             $table->string('password');
             $table->string('institution_name');
             $table->string('designation')->nullable();
-            $table->integer('user_role');
             $table->rememberToken();
             $table->timestamps();
         });
