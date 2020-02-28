@@ -19,14 +19,14 @@ Route::get('/', function () {
 })->name('signup');
 
 Route::get('/login/home', function(){
-    if(Ath::check()){
+    if(Auth::check()){
         return view('home');
     }
     return view('login');
 })->name('login_home');
 
 Route::post('/signup', function(Request $request){
-    if(Auth::check()){
+    if(!Auth::check()){
         if($request->signup_check == 'professor'){
             $data = [
                 'account_type' => 'professor'
