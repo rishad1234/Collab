@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Auth;
 
 use App\User;
+use App\Role;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
@@ -70,22 +71,32 @@ class RegisterController extends Controller
                 if(isset($data['designation'])){
                     $designation = $data['designation'];
                 }
+
+                $role = Role::where('name', 'Professor')->first();
+
                 return User::create([
                     'name' => $data['name'],
                     'email' => $data['email'],
                     'password' => Hash::make($data['password']),
                     'institution_name' =>$data['institution_name'],
-                    'designation' => $designation
+                    'designation' => $designation,
+                    'role_id' => $role->id
                 ]);
             }else if($data['role'] == 'student'){
                 $designation = '';
+
+                $role = Role::where('name', 'student')->first();
+
                 return User::create([
                     'name' => $data['name'],
                     'email' => $data['email'],
                     'password' => Hash::make($data['password']),
                     'institution_name' =>$data['institution_name'],
-                    'designation' => $designation
+                    'designation' => $designation,
+                    'role_id' => $role->id
                 ]);
+            }else{
+                abort(404);
             }
         }else{
             abort(404);
