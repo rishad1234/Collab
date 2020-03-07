@@ -5,7 +5,7 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">Dashboard</div>
+                <div class="card-header">Message</div>
 
                 <div class="card-body">
                     @if (session('status'))
@@ -14,7 +14,9 @@
                         </div>
                     @endif
 
-                    <div class="card-body" id="app"></div>
+                    <div class="card-body" id="app">
+                        <message-app :user="{{ auth()->user() }}"></message-app>
+                    </div>
                     
                 </div>
             </div>
