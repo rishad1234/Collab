@@ -35,7 +35,7 @@
 </script>
 
 <style lang="scss" scoped>
-.contacts-list {
+.contact-list {
     flex: 2;
     max-height: 100%;
     height: 600px;
@@ -72,7 +72,7 @@
                 border-radius: 3px;
             }
             .contact {
-                flex: 3;
+                flex: 4;
                 font-size: 10px;
                 overflow: hidden;
                 display: flex;

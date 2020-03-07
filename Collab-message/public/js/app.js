@@ -2076,7 +2076,8 @@ __webpack_require__.r(__webpack_exports__);
       type: Object
     },
     messages: {
-      type: Array
+      type: Array,
+      required: true
     }
   }
 });
@@ -6680,7 +6681,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".contacts-list[data-v-0ee8d67a] {\n  flex: 2;\n  max-height: 100%;\n  height: 600px;\n  overflow: scroll;\n  border-left: 1px solid #a6a6a6;\n}\n.contacts-list ul[data-v-0ee8d67a] {\n  list-style-type: none;\n  padding-left: 0;\n}\n.contacts-list ul li[data-v-0ee8d67a] {\n  display: flex;\n  padding: 2px;\n  border-bottom: 1px solid #aaaaaa;\n  height: 80px;\n  position: relative;\n  cursor: pointer;\n}\n.contacts-list ul li.selected[data-v-0ee8d67a] {\n  background: #dfdfdf;\n}\n.contacts-list ul li span.unread[data-v-0ee8d67a] {\n  background: #82e0a8;\n  color: #fff;\n  position: absolute;\n  right: 11px;\n  top: 20px;\n  display: flex;\n  font-weight: 700;\n  min-width: 20px;\n  justify-content: center;\n  align-items: center;\n  line-height: 20px;\n  font-size: 12px;\n  padding: 0 4px;\n  border-radius: 3px;\n}\n.contacts-list ul li .contact[data-v-0ee8d67a] {\n  flex: 3;\n  font-size: 10px;\n  overflow: hidden;\n  display: flex;\n  flex-direction: column;\n  justify-content: center;\n}\n.contacts-list ul li .contact p[data-v-0ee8d67a] {\n  margin: 0;\n}\n.contacts-list ul li .contact p.name[data-v-0ee8d67a] {\n  font-weight: bold;\n}", ""]);
+exports.push([module.i, ".contact-list[data-v-0ee8d67a] {\n  flex: 2;\n  max-height: 100%;\n  height: 600px;\n  overflow: scroll;\n  border-left: 1px solid #a6a6a6;\n}\n.contact-list ul[data-v-0ee8d67a] {\n  list-style-type: none;\n  padding-left: 0;\n}\n.contact-list ul li[data-v-0ee8d67a] {\n  display: flex;\n  padding: 2px;\n  border-bottom: 1px solid #aaaaaa;\n  height: 80px;\n  position: relative;\n  cursor: pointer;\n}\n.contact-list ul li.selected[data-v-0ee8d67a] {\n  background: #dfdfdf;\n}\n.contact-list ul li span.unread[data-v-0ee8d67a] {\n  background: #82e0a8;\n  color: #fff;\n  position: absolute;\n  right: 11px;\n  top: 20px;\n  display: flex;\n  font-weight: 700;\n  min-width: 20px;\n  justify-content: center;\n  align-items: center;\n  line-height: 20px;\n  font-size: 12px;\n  padding: 0 4px;\n  border-radius: 3px;\n}\n.contact-list ul li .contact[data-v-0ee8d67a] {\n  flex: 4;\n  font-size: 10px;\n  overflow: hidden;\n  display: flex;\n  flex-direction: column;\n  justify-content: center;\n}\n.contact-list ul li .contact p[data-v-0ee8d67a] {\n  margin: 0;\n}\n.contact-list ul li .contact p.name[data-v-0ee8d67a] {\n  font-weight: bold;\n}", ""]);
 
 // exports
 
@@ -38465,14 +38466,15 @@ var render = function() {
               "li",
               {
                 key: message.id,
-                staticClass:
-                  "`message${message.to == contact.id ? 'sent' : 'received'}`"
+                class:
+                  "message" +
+                  (message.user_to == _vm.contact.id ? " sent" : " received")
               },
               [
                 _c("div", { staticClass: "text" }, [
                   _vm._v(
                     "\n                " +
-                      _vm._s(message.text) +
+                      _vm._s(message.message) +
                       "\n            "
                   )
                 ])
