@@ -1,7 +1,7 @@
 <template>
     <div class="message-app">
         <Chat :contact="selectedContact" :messages="messages"/>
-        <ContactList :contact="contacts"/>
+        <ContactList :contacts="contacts"/>
     </div>
 </template>
 
@@ -25,7 +25,6 @@
         mounted() {
             console.log(this.user);
             axios.get('/contacts').then((res) => {
-                console.log(res.data);
                 this.contacts = res.data;
             });
         },

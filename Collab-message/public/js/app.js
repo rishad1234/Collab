@@ -1930,7 +1930,23 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-/* harmony default export */ __webpack_exports__["default"] = ({});
+//
+//
+//
+//
+//
+//
+//
+//
+//
+/* harmony default export */ __webpack_exports__["default"] = ({
+  props: {
+    contacts: {
+      type: Array,
+      "default": []
+    }
+  }
+});
 
 /***/ }),
 
@@ -1973,7 +1989,6 @@ __webpack_require__.r(__webpack_exports__);
 
     console.log(this.user);
     axios.get('/contacts').then(function (res) {
-      console.log(res.data);
       _this.contacts = res.data;
     });
   },
@@ -37379,7 +37394,21 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "contact-list" })
+  return _c("div", { staticClass: "contact-list" }, [
+    _c(
+      "ul",
+      _vm._l(_vm.contacts, function(contact) {
+        return _c("li", { key: contact.id }, [
+          _c("div", { staticClass: "contact" }, [
+            _c("p", { staticClass: "name" }, [_vm._v(_vm._s(contact.name))]),
+            _vm._v(" "),
+            _c("p", { staticClass: "email" }, [_vm._v(_vm._s(contact.email))])
+          ])
+        ])
+      }),
+      0
+    )
+  ])
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -37411,7 +37440,7 @@ var render = function() {
         attrs: { contact: _vm.selectedContact, messages: _vm.messages }
       }),
       _vm._v(" "),
-      _c("ContactList", { attrs: { contact: _vm.contacts } })
+      _c("ContactList", { attrs: { contacts: _vm.contacts } })
     ],
     1
   )
