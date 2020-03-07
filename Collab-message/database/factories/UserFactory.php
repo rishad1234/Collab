@@ -2,6 +2,7 @@
 
 /** @var \Illuminate\Database\Eloquent\Factory $factory */
 use App\User;
+use App\Message;
 use Illuminate\Support\Str;
 use Faker\Generator as Faker;
 
@@ -21,7 +22,20 @@ $factory->define(User::class, function (Faker $faker) {
         'name' => $faker->name,
         'email' => $faker->unique()->safeEmail,
         'email_verified_at' => now(),
-        'password' => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', // password
+        'password' => '12345678', // password
         'remember_token' => Str::random(10),
+    ];
+});
+
+$factory->define(Message::class, function (Faker $faker) {
+
+    do{
+        $user_from = rand(1, 15);
+        $user_to = rand(1, 15);
+    }while($user_from == $user_to);
+    return [
+        'user_from' => $user_from,
+        'User_to' => $user_to,
+        'message' => $faker->sentence,
     ];
 });
