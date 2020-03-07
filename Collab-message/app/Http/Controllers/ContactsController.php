@@ -11,4 +11,8 @@ class ContactsController extends Controller
         $contacts = User::all();
         return response()->json($contacts);
     }
+    public function getMessages($id){
+        $messages = Message::where('from', $id)->orWhere('to', $id)->get();
+        return response()->json($messages);
+    }
 }
