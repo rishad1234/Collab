@@ -14,7 +14,8 @@
                         </div>
                     @endif
 
-                    You are logged in!
+                    <div class="card-body" id="app"></div>
+                    
                 </div>
             </div>
         </div>
