@@ -23,7 +23,13 @@
             };
         },
         mounted() {
-            console.log(this.user);
+            
+            Echo.private(`messages.${this.user.id}`)
+                .listen('NewMessage', (e) => {
+                    console.log("echo");
+                    this.handleIncoming(e.message);
+                });
+
             axios.get('/contacts').then((res) => {
                 this.contacts = res.data;
             });
@@ -37,7 +43,16 @@
             },
             saveNewMessage(text){
                 this.messages.push(text);
-            }
+            },
+            handleIncoming(message){
+                console.log("dukhse function");
+                if (this.selectedContact && message.user_from == this.selectedContact.id) {
+                    this.saveNewMessage(message);
+                    console.log("dhukse if");
+                    return;
+                }
+                alert(message.message);
+            },
 
         },
         components : {Chat, ContactList}
