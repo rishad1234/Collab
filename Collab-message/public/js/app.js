@@ -2037,7 +2037,7 @@ __webpack_require__.r(__webpack_exports__);
   mounted: function mounted() {
     var _this = this;
 
-    Echo["private"]("messages.".concat(this.user.id)).listen('NewMessage', function (e) {
+    Echo["private"]("messages." + this.user.id).listen('NewMessage', function (e) {
       console.log("echo");
 
       _this.handleIncoming(e.message);

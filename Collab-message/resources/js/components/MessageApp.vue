@@ -24,7 +24,7 @@
         },
         mounted() {
             
-            Echo.private(`messages.${this.user.id}`)
+            Echo.private(`messages.` + this.user.id)
                 .listen('NewMessage', (e) => {
                     console.log("echo");
                     this.handleIncoming(e.message);
