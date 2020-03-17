@@ -1,5 +1,5 @@
 <template>
-    <div class="message-feed">
+    <div class="feed" ref="feed">
         <ul v-if="contact">
             <li v-for="message in messages" :class="`message${message.user_to == contact.id ? ' sent' : ' received'}`" :key="message.id">
                 <div class="text">
@@ -21,11 +21,28 @@
                 required: true
             }
         },
+        methods:{
+            scrollToBottom(){
+                setTimeout(() =>{
+                    this.$refs.feed.scrollTop = this.$refs.feed.scrollHeight - 
+                                                this.$refs.feed.clientHeight;
+                }, 50);
+                console.log('dhukse');
+            }
+        },
+        watch:{
+            contact(contact){
+                this.scrollToBottom();
+            },
+            messages(messages){
+                this.scrollToBottom();
+            }
+        }
     }
 </script>
 
 <style lang="scss" scoped>
-.message-feed {
+.feed {
     background: #f0f0f0;
     height: 100%;
     max-height: 470px;

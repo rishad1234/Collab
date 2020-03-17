@@ -1934,7 +1934,18 @@ __webpack_require__.r(__webpack_exports__);
   },
   methods: {
     sendMessage: function sendMessage(text) {
-      console.log(text);
+      var _this = this;
+
+      if (!this.contact) {
+        return;
+      }
+
+      axios.post('conversation/send', {
+        contact_id: this.contact.id,
+        text: text
+      }).then(function (res) {
+        _this.$emit('new', res.data);
+      });
     }
   },
   components: {
@@ -2039,6 +2050,9 @@ __webpack_require__.r(__webpack_exports__);
         _this2.messages = res.data;
         _this2.selectedContact = contact;
       });
+    },
+    saveNewMessage: function saveNewMessage(text) {
+      this.messages.push(text);
     }
   },
   components: {
@@ -2079,6 +2093,24 @@ __webpack_require__.r(__webpack_exports__);
       type: Array,
       required: true
     }
+  },
+  methods: {
+    scrollToBottom: function scrollToBottom() {
+      var _this = this;
+
+      setTimeout(function () {
+        _this.$refs.feed.scrollTop = _this.$refs.feed.scrollHeight - _this.$refs.feed.clientHeight;
+      }, 50);
+      console.log('dhukse');
+    }
+  },
+  watch: {
+    contact: function contact(_contact) {
+      this.scrollToBottom();
+    },
+    messages: function messages(_messages) {
+      this.scrollToBottom();
+    }
   }
 });
 
@@ -2106,7 +2138,9 @@ __webpack_require__.r(__webpack_exports__);
     };
   },
   methods: {
-    send: function send() {
+    send: function send(e) {
+      e.preventDefault();
+
       if (this.message == '') {
         return;
       }
@@ -6719,7 +6753,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".message-feed[data-v-79f1c222] {\n  background: #f0f0f0;\n  height: 100%;\n  max-height: 470px;\n  overflow: scroll;\n}\n.message-feed ul[data-v-79f1c222] {\n  list-style-type: none;\n  padding: 5px;\n}\n.message-feed ul li.message[data-v-79f1c222] {\n  margin: 10px 0;\n  width: 100%;\n}\n.message-feed ul li.message .text[data-v-79f1c222] {\n  max-width: 200px;\n  border-radius: 5px;\n  padding: 12px;\n  display: inline-block;\n}\n.message-feed ul li.message.received[data-v-79f1c222] {\n  text-align: right;\n}\n.message-feed ul li.message.received .text[data-v-79f1c222] {\n  background: #b2b2b2;\n}\n.message-feed ul li.message.sent[data-v-79f1c222] {\n  text-align: left;\n}\n.message-feed ul li.message.sent .text[data-v-79f1c222] {\n  background: #81c4f9;\n}", ""]);
+exports.push([module.i, ".feed[data-v-79f1c222] {\n  background: #f0f0f0;\n  height: 100%;\n  max-height: 470px;\n  overflow: scroll;\n}\n.feed ul[data-v-79f1c222] {\n  list-style-type: none;\n  padding: 5px;\n}\n.feed ul li.message[data-v-79f1c222] {\n  margin: 10px 0;\n  width: 100%;\n}\n.feed ul li.message .text[data-v-79f1c222] {\n  max-width: 200px;\n  border-radius: 5px;\n  padding: 12px;\n  display: inline-block;\n}\n.feed ul li.message.received[data-v-79f1c222] {\n  text-align: right;\n}\n.feed ul li.message.received .text[data-v-79f1c222] {\n  background: #b2b2b2;\n}\n.feed ul li.message.sent[data-v-79f1c222] {\n  text-align: left;\n}\n.feed ul li.message.sent .text[data-v-79f1c222] {\n  background: #81c4f9;\n}", ""]);
 
 // exports
 
@@ -38424,7 +38458,8 @@ var render = function() {
     { staticClass: "message-app" },
     [
       _c("Chat", {
-        attrs: { contact: _vm.selectedContact, messages: _vm.messages }
+        attrs: { contact: _vm.selectedContact, messages: _vm.messages },
+        on: { new: _vm.saveNewMessage }
       }),
       _vm._v(" "),
       _c("ContactList", {
@@ -38457,7 +38492,7 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "message-feed" }, [
+  return _c("div", { ref: "feed", staticClass: "feed" }, [
     _vm.contact
       ? _c(
           "ul",
