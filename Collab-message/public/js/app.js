@@ -2055,8 +2055,8 @@ __webpack_require__.r(__webpack_exports__);
         _this2.selectedContact = contact;
       });
     },
-    saveNewMessage: function saveNewMessage(text) {
-      this.messages.push(text);
+    saveNewMessage: function saveNewMessage(message) {
+      this.messages.push(message);
     },
     handleIncoming: function handleIncoming(message) {
       console.log("dukhse function");

@@ -14,7 +14,19 @@ class ContactsController extends Controller
         return response()->json($contacts);
     }
     public function getMessages($id){
-        $messages = Message::where('user_from', $id)->orWhere('user_to', $id)->get();
+        //Message::where('from', $id)->where('to', auth()->id())->update(['read' => true]);
+
+        //$messages = Message::where('user_from', $id)->orWhere('user_to', $id)->get();
+        // get all messages between the authenticated user and the selected user
+        $messages = Message::where(function($q) use ($id) {
+            $q->where('user_from', auth()->id());
+            $q->where('user_to', $id);
+        })->orWhere(function($q) use ($id) {
+            $q->where('user_from', $id);
+            $q->where('user_to', auth()->id());
+        })
+        ->get();
+
         return response()->json($messages);
     }
 
