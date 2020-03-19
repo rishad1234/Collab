@@ -81,7 +81,7 @@ class ProfileController extends Controller
                 'cover_image' => request()->cover_image->store('uploads', 'public'),
             ]);
         }
-        dd($data);
+        //dd($data);
 
 
         $user->update($data);
