@@ -11,7 +11,8 @@
                 <h3> {{$item->title}} </h3>
 
                 <p> {{$item->description}} </p>
-                <a href=" {{route('downloadFile', $item->id)}} " class="btn btn-outline-dark">Download PDF</a>
+                {{-- <a href=" {{route('downloadFile', $item->id)}} " class="btn btn-outline-dark">Download PDF</a> --}}
+                <a href="/storage/{{$item->document}}" class="btn btn-outline-dark">Read Document</a>
             @empty
                 
             @endforelse

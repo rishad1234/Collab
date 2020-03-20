@@ -26,6 +26,9 @@
                 <div class="form-group">
                     <label for="exampleFormControlFile1">Upload files</label>
                     <input type="file" class="form-control-file" id="exampleFormControlFile1" name="document">
+                    @error('document')
+                    <p>{{$message}}</p>
+                    @enderror
                 </div>
                 <button class="btn btn-outline-dark">Post</button>
             </form>
