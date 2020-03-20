@@ -102,7 +102,6 @@ class ProfileController extends Controller
         $research->user_id = Auth()->user()->id;
         $research->title = request('title');
         $research->description = request('description');
-        
 
         $data = request()->validate([
             'title' => 'required',
