@@ -6,7 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Research extends Model
 {
-    protected $fillable = [
-        'title', 'user_id', 'description',
-    ];
+    protected $guarded = [];
+    // protected $fillable = [
+    //     'title', 'user_id', 'description',
+    // ];
 }

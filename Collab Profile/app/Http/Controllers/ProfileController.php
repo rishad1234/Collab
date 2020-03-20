@@ -81,7 +81,6 @@ class ProfileController extends Controller
                 'cover_image' => request()->cover_image->store('uploads', 'public'),
             ]);
         }
-        //dd($data);
 
 
         $user->update($data);
@@ -117,7 +116,7 @@ class ProfileController extends Controller
 
         $research->title = request('title');
         $research->description = request('description');
-        $research->document = request('document')->store('uploaded document', 'public');
+        $research->document = request()->document->getClientOriginalName();
         $research->user_id = Auth()->user()->id;
         
 
@@ -137,7 +136,7 @@ class ProfileController extends Controller
         if(request()->has('document')){
             //dd('111');
             $research->save([
-                'document' => request()->document->store('uploaded document', 'public'),
+                'document' => request()->document->store('documents', 'public'),
             ]);
         }
 
@@ -160,7 +159,8 @@ class ProfileController extends Controller
     public function downloadPDF($id)
     {
         $research = \App\Research::find($id);
-        dd($research->document);
-        //return response()->download(storage_path($research->document, "sdfs"));
+        // dd("!231");
+        // dd($research->document);
+        return response()->download(public_path("documents\\" . $research->document, "sdfs"));
     }
 }
