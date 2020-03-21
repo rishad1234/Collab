@@ -50,31 +50,35 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
+
+
+
+
+
+// Profile Controller Routes
 Route::get('/profile/{user}', 'ProfileController@index')->name('profile.index');
-
-
-
 Route::get('/profile/{user}/edit', 'ProfileController@edit')->name('profile.edit');
 Route::patch('/profile/edit/{user}', 'ProfileController@updateInfo');
-//Route::post('/profile', 'ProfileController@saveEdit');
-
-
 Route::get('/profile/{user}/edit/about', 'ProfileController@editAbout')->name('profile.edit.about');
 Route::patch('/profile/edit/about/{user}', 'ProfileController@updateAbout');
 
-Route::get('/profile/{user}/add/research', 'ProfileController@addResearch');
-Route::post('/profile/{user}', 'ProfileController@postResearch');
 
-Route::get('/profile/{user}/research/{id}', 'ProfileController@readResearch');
+
+// Research Controller Routes
+Route::get('/profile/{user}/add/research', 'ResearchController@addResearch');
+Route::post('/profile/{user}', 'ResearchController@postResearch');
+Route::get('/profile/{user}/research/{id}', 'ResearchController@readResearch');
+route::get('/profile/{user_name}/delete/research/{id}', 'ResearchController@deleteResearch');
 Route::get('profile/research/download/{id}', 'ProfileController@downloadPDF')->name('downloadFile');
-route::get('/profile/{user_name}/delete/research/{id}', 'ProfileController@deleteResearch');
 
-Route::get('/profile/{user}/add/project', 'ProfileController@addProject');
-Route::post('/profile/{user}/add/project', 'ProfileController@postProject');
-Route::get('/profile/{user}/project/{id}', 'ProfileController@readProject');
 
-Route::get('/profile/{user}/edit/project/{id}', 'ProfileController@editProject');
-Route::patch('/profile/edit/project/{id}', 'ProfileController@updateProject');
-Route::get('/profile/{user_name}/delete/project/{id}', 'ProfileController@deleteProject');
+
+// Project Controller Routes
+Route::get('/profile/{user}/add/project', 'ProjectController@addProject');
+Route::post('/profile/{user}/add/project', 'ProjectController@postProject');
+Route::get('/profile/{user}/project/{id}', 'ProjectController@readProject');
+Route::get('/profile/{user}/edit/project/{id}', 'ProjectController@editProject');
+Route::patch('/profile/edit/project/{id}', 'ProjectController@updateProject');
+Route::get('/profile/{user_name}/delete/project/{id}', 'ProjectController@deleteProject');
 
 
