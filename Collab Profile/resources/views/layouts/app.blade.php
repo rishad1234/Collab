@@ -11,6 +11,17 @@
         <!-- link css -->
         <link rel="stylesheet" href="/css/style.css">
         <script src="https://kit.fontawesome.com/1685df272a.js"></script>
+            <!-- jquery cdn -->
+        <script src="https://code.jquery.com/jquery-3.4.1.js"
+        integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+
+        <!-- font awesome link -->
+        <script src="https://kit.fontawesome.com/1685df272a.js"></script>
+
+        <!-- text editor -->
+        <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="/css/richtext.min.css">
+        <script src="/js/jquery.richtext.min.js"></script>
     
         <title>Collab</title>
     </head>

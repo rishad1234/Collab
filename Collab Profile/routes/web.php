@@ -67,3 +67,14 @@ Route::post('/profile/{user}', 'ProfileController@postResearch');
 
 Route::get('/profile/{user}/research/{id}', 'ProfileController@readResearch');
 Route::get('profile/research/download/{id}', 'ProfileController@downloadPDF')->name('downloadFile');
+route::get('/profile/{user_name}/delete/research/{id}', 'ProfileController@deleteResearch');
+
+Route::get('/profile/{user}/add/project', 'ProfileController@addProject');
+Route::post('/profile/{user}/add/project', 'ProfileController@postProject');
+Route::get('/profile/{user}/project/{id}', 'ProfileController@readProject');
+
+Route::get('/profile/{user}/edit/project/{id}', 'ProfileController@editProject');
+Route::patch('/profile/edit/project/{id}', 'ProfileController@updateProject');
+Route::get('/profile/{user_name}/delete/project/{id}', 'ProfileController@deleteProject');
+
+

@@ -18,7 +18,7 @@
                 </div>
                 <div class="form-group">
                     <label for="about">Enter Excerpt</label>
-                    <textarea class="form-control" id="about" rows="6" name="description"></textarea>
+                    <textarea class="form-control" class="content" id="about" rows="6" name="description"></textarea>
                     @error('description')
                     <p>{{$message}}</p>
                     @enderror
@@ -56,5 +56,6 @@
     integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
     crossorigin="anonymous"></script>
 <!-- local -->
+<script src="/js/handle-addnew-research.js"></script>
 
 @endsection

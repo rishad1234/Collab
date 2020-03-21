@@ -69,7 +69,8 @@
                     </div>
                     <hr>
                 @empty
-                
+                    <h5><p>no Research paper found</p></h5>
+
                 @endforelse
                 
 
@@ -136,10 +137,39 @@
                 <hr> --}}
             </div>
             <div class="projects">
-                <a href="edit-profile-me-addProjects.html" class="btn projects__btn active float-right" role="button" aria-pressed="true">Add New</a>
+                <a href="/profile/{{Auth::user()->name}}/add/project" class="btn research__btn active float-right " role="button" aria-pressed="true">Add New</a>
                 <h4>Projects</h4>
+
+
+
+                @forelse ($project as $item)
+                    <div class="row no-gutters projects__each mt-3" onclick="location.href='research-project-template-me.html';">
+                        <div class="col-lg-3 projects__each__img">
+
+                            @if ($item->thumbnail_image)
+                                <img src=" {{ asset('storage/' . $item->thumbnail_image) }}" alt="">
+                            @else
+                                <img src="/images/project-img.jpg" alt="">
+                            @endif
+                            {{-- <img src="/images/project-img.jpg" alt=""> --}}
+                        </div>
+                        <div class="col-lg-9 projects__each__info">
+                            <h5>
+                                <!-- limit: 8 words -->
+                                {{ $item->title }}
+                            </h5>
+                            <p>
+                                <!-- limit:40 words -->
+                                {{ str_limit($item->excerpt, 300, '...') }} <a href="/profile/{{Auth::user()->name}}/project/{{$item->id}}">more</a> </p>
+                        </div>
+                    </div>
+                    <hr>
+                @empty
+                    <h5><p>no project found</p></h5>
+                @endforelse
+
                 <!-- projeect - 1 -->
-                <div class="row no-gutters projects__each mt-3" onclick="location.href='research-project-template-me.html';">
+                {{-- <div class="row no-gutters projects__each mt-3" onclick="location.href='research-project-template-me.html';">
                     <div class="col-lg-3 projects__each__img">
                         <img src="/images/project-img.jpg" alt="">
                     </div>
@@ -175,7 +205,7 @@
                             nesciunt saepe eius. Adipisci, dolorem provident. Expedita. <a href="research-project-template-me.html">more</a> </p>
                     </div>
                 </div>
-                <hr>
+                <hr> --}}
             </div>
         </div>
         <div class="col-sm-4">
