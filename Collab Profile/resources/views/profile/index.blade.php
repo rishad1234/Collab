@@ -2,6 +2,13 @@
 
 
 @section('content')
+
+@if (session()->has('success'))
+    <div class="alert alert-success">
+        {{ session()->get('success') }}
+    </div>
+@endif
+
 <div class="container portfolioContainer mt-5 mb-5">
     <div class="row">
         <div class="col-sm-8">
@@ -16,11 +23,9 @@
                         <img src="/images/profile-cover-img.jpg" alt="">
                     @endif
 
-                    
                 </div>
                 <div class="containIntroInfo__profileImg">
 
-                    
                     @if (Auth::user()->profile_image)
                         <img src=" {{ asset('storage/' . Auth::user()->profile_image) }}" alt="">
                     @else
@@ -55,7 +60,12 @@
                 @forelse ($research as $item)
                     <div class="row no-gutters research__each mt-3" onclick="location.href='research-project-template-me.html';">
                         <div class="col-lg-3 research__each__img">
-                            <img src="/images/research-img.jpg" alt="">
+                            {{-- <img src="/images/research-img.jpg" alt=""> --}}
+                            @if ($item->thumbnail_image)
+                                <img src=" {{ asset('storage/' . $item->thumbnail_image) }}" alt="">
+                            @else
+                                <img src="/images/research-img.jpg" alt="">
+                            @endif
                         </div>
                         <div class="col-lg-9 research__each__info">
                             <h5>

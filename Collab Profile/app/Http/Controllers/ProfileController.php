@@ -49,7 +49,6 @@ class ProfileController extends Controller
         ]);
 
         if(request()->hasFile('profile_image')){
-
             request()->validate([
                 'profile_image' => 'file|image|max:5000'
             ]);
@@ -75,6 +74,9 @@ class ProfileController extends Controller
 
 
         $user->update($data);
+
+        session()->flash('success', 'Profile Updated Successfully');
+
         return redirect()->route('profile.index', ['user' => $user->name]);
     }
 

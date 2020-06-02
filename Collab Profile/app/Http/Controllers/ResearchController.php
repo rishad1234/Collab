@@ -45,6 +45,9 @@ class ResearchController extends Controller
         $research->document = request('document')->store('uploaded document', 'public');
 
         $research->save($data);
+
+        session()->flash('success', 'Research Added Successfully');
+
         return redirect()->route('profile.index', ['user' => $user->name]);
     }
 
@@ -58,6 +61,7 @@ class ResearchController extends Controller
     {
         $research = \App\Research::find($id);
         $research->delete();
+        session()->flash('success', 'Research Deleted Successfully');
         return redirect()->route('profile.index', ['user' => $user_name]);
     }
 }
