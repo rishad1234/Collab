@@ -8,5 +8,7 @@
 </head>
 <body>
     {{$post->body}}
+
+    @comments(['model' => $post])
 </body>
 </html>
