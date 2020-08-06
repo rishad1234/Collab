@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+    <!-- link css -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <title>Collab | Newsfeed</title>
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">Collab.</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse navbar__menu" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <div class="dropdown d-none d-lg-block">
+                            <span><a class="nav-link" href="">Robert C. Merton</a></span>
+                            <div class="dropdown-content">
+                                <ul>
+                                    <li><a href="profile.html">Profile</a></li>
+                                    <li><a href="login.html">Logout</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <a class="nav-link d-block d-lg-none" href="profile.html">Profile</a>
+                    </li>
+                    <li class="nav-item d-block d-lg-none">
+                        <a href="login.html" class="nav-link">Logout</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+
+
+    <!-- main news feed starts-->
+
+    <!-- start status -->
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-md-2"></div>
+            <div class="col-md-8">
+                <form class="status_input">
+                    <div class="form-group">
+                        <input type="text" class="form-control" id="statusInput" aria-describedby="statusInputHelp" placeholder="What's on your mind?">
+                        <!-- <textarea name="" id="" cols="30" rows="10"></textarea> -->
+                    </div>
+                    <div class="row">
+                        <div class="col-3">
+                            <div class="form-group">
+                                <input type="file">
+                            </div>
+                        </div>
+                        <div class="col-9">
+                            <button type="submit" class="btn btn-outline-dark float-right">Upload</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="col-md-2"></div>
+        </div>
+    </div>
+    <!-- end status -->
+
+
+
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-md-2"></div>
+            <div class="col-md-8">
+                <!-- each post starts-->
+                <div class="post_box">
+                    <div class="post_author row">
+                        <div class="col-2 col-lg-1 autho_img">
+                            <img src="images/profile-profile-img.jpg" alt="">
+                        </div>
+                        <div class="col-10 col-lg-11 autho_description pl-4">
+                            <p class="autho_name">Robert C. Merton</p>
+                            <p class="post_time">March 18, 2020</p>
+                        </div>
+                    </div>
+                    <div class="post_body pt-4">
+                        <p>
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui, ipsa reiciendis sapiente asperiores officiis saepe ab aliquam rem ex delectus, totam possimus. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis facere aliquam assumenda voluptate
+                            doloribus quos doloremque maxime, voluptates atque impedit?
+                        </p>
+                    </div>
+                    <div class="post_like row">
+                        <div class="col-2">
+                            <button type="button" class="btn btn-outline-dark like_btn">Like</button>
+                        </div>
+                        <div class="col-10 like_count">
+                            <p class="float-right">12 likes</p>
+                        </div>
+                    </div>
+                    <!-- comment starts -->
+                    <div class="post_comments">
+
+                        <div class="comment_holder">
+                            <p class="commnet_author ">Rakib Ul Hasan</p>
+                            <p class="comment_body">Lorem ipsum dolor sit amet consectetur adipisicing elit. In omnis quam tempore tenetur? Sint cumque voluptatem provident!</p>
+                        </div>
+
+                        <div class="comment_input">
+                            <form>
+                                <div class="row">
+                                    <div class="col-9 col-lg-10">
+                                        <div class="form-group">
+                                            <input type="text" class="form-control" id="CommentInput" aria-describedby="CommentInputHelp" placeholder="comment">
+                                        </div>
+                                    </div>
+                                    <div class="col-3 send_com col-lg-2">
+                                        <button type="submit" class="btn btn-outline-dark comment_send_btn">Send</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <!-- comment ends -->
+                </div>
+                <!-- each post ends-->
+            </div>
+            <div class="col-md-2"></div>
+        </div>
+    </div>
+
+    <!-- main news feed ends-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+    <script>
+        $(".like_btn").click(function() {
+            $(this).text("Liked");
+            $(this).prop("disabled", true);
+            var like_str = $(".like_count p").text();
+            var extract_like = like_str.match(/\d+/)[0];
+            extract_like++;
+            $(".like_count p").text(extract_like + " likes");
+        })
+    </script>
+</body>
+
+</html>
