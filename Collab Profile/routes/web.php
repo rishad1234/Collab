@@ -82,3 +82,6 @@ Route::patch('/profile/edit/project/{id}', 'ProjectController@updateProject');
 Route::get('/profile/{user_name}/delete/project/{id}', 'ProjectController@deleteProject');
 
 
+//Interest Controller Routes
+Route::get("/api/interest", "InterestController@index");
+Route::get("/api/interest/post", "InterestController@post");
