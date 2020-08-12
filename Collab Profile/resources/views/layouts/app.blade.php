@@ -62,6 +62,7 @@
                                 <div class="dropdown-content" aria-labelledby="navbarDropdown">
                                     <ul>
                                     <li><a href="/profile/{{Auth::user()->name}}">Profile</a></li>
+                                    <li><a href="/interest">Interests</a></li>
                                         <li>
                                             <a href="{{ route('logout') }}"
                                             onclick="event.preventDefault();

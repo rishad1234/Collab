@@ -15,7 +15,7 @@ class InterestController extends Controller
     }
 
     public function index(){
-        return "welcome";
+        return View("interest.index");
     }
 
     public function post(Request $request){

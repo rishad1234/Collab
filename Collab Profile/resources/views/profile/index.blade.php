@@ -220,7 +220,7 @@
         </div>
         <div class="col-sm-4">
             <div class="profileInterests">
-                <a href="edit-profile-me-interest.html"><i class="fas fa-edit float-right profileInterests__edit"></i></a>
+                <a href="/interest"><i class="fas fa-edit float-right profileInterests__edit"></i></a>
                 <h3>Interests</h3>
                 <div class="profileInterests__containLists">
                     <ul class="profileInterests__containLists__lists">

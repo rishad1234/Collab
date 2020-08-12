@@ -83,5 +83,7 @@ Route::get('/profile/{user_name}/delete/project/{id}', 'ProjectController@delete
 
 
 //Interest Controller Routes
-Route::get("/api/interest", "InterestController@index");
+//Route::get("/api/interest", "InterestController@index");
 Route::get("/api/interest/post", "InterestController@post");
+
+Route::get("interest", "InterestController@index");
