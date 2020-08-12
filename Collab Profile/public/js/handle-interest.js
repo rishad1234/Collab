@@ -1,5 +1,5 @@
 // variable declaration
-let selectedInterest = [];
+var selectedInterest = [];
 
 // functions
 $(".adding_interest").click(function(){
@@ -21,8 +21,34 @@ $(".newInterestCard").hover(function(){
     $(this).css("opacity","1.0")
 })
 
+
 $(".newInterestChildWrappers li").click(function(){
+    
     $(this).css("background","white")
     $(this).css("color","black")
-    console.log($(this).text())
+    var each_data = $(this).text()
+    selectedInterest.push(each_data)
+
+    // console.log($(this).text())
+
+})
+
+$(".send_my_interest").click(function(e){
+    console.log(selectedInterest)
+    
+    var selectedInterests = `
+        {
+            "data": ${selectedInterest}
+        }    
+    `
+    $.ajax({
+        url: "/api/interest/post",
+        method: "POST",
+        data: selectedInterests,
+        dataType: "json",
+        success: function(){
+          console.log("Success")
+        }
+    });
+    // e.preventDefault()
 })

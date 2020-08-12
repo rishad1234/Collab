@@ -19,17 +19,22 @@ class InterestController extends Controller
     }
 
     public function post(Request $request){
+
         $req = $request->json()->all();
-        $interests = $req["data"];
-        $user = Auth::user();
-
-        foreach($interests as $interest){
-            $interest = new \App\Interest;
-            $interest->user_id = $user->id;
-            $interest->interest = $interest;   
-            $interest->save();      
+        // var_dump($req);
+        if(isset($req["data"])){
+            $interests = $req["data"];
+            $user = Auth::user();
+            foreach($interests as $interest){
+                $interest = new \App\Interest;
+                $interest->user_id = $user->id;
+                $interest->interest = $interest;  
+                $interest->save();      
+            }
+        }else{
+            return redirect()->route("home");
         }
-
-        return \response("successfull", 200);
+        // return View("interest.index");
+        return redirect()->route('profile.index', ['user' => $user->name]);
     }
 }
