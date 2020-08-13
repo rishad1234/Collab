@@ -9,10 +9,10 @@ class InterestController extends Controller
 {
     protected $except = [];
 
-    public function __construct()
-    {
-        $this->middleware('auth');
-    }
+    // public function __construct()
+    // {
+    //     $this->middleware('auth');
+    // }
 
     public function index(){
         return View("interest.index");
@@ -21,20 +21,16 @@ class InterestController extends Controller
     public function post(Request $request){
 
         $req = $request->json()->all();
-        // var_dump($req);
-        if(isset($req["data"])){
+        if(isset($req["data"]) && isset($req["user_id"])){
             $interests = $req["data"];
-            $user = Auth::user();
-            foreach($interests as $interest){
+            $user = $req["user_id"];
+            foreach($interests as $intrst){
                 $interest = new \App\Interest;
-                $interest->user_id = $user->id;
-                $interest->interest = $interest;  
+                $interest->user_id = $user;
+                $interest->interest = $intrst;  
                 $interest->save();      
             }
-        }else{
-            return redirect()->route("home");
         }
         // return View("interest.index");
-        return redirect()->route('profile.index', ['user' => $user->name]);
     }
 }

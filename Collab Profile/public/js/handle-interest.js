@@ -36,11 +36,18 @@ $(".newInterestChildWrappers li").click(function(){
 $(".send_my_interest").click(function(e){
     console.log(selectedInterest)
     
+    // this block of code must be modified
+    // user_id must be dynamic for a successful request
+
     var selectedInterests = `
         {
-            "data": ${selectedInterest}
+            "user_id": 4,
+            "data": ${JSON.stringify(selectedInterest)}
         }    
     `
+    // end of  block
+    
+    console.log(selectedInterests)
     $.ajax({
         url: "/api/interest/post",
         method: "POST",
