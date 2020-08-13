@@ -34,18 +34,27 @@ aria-hidden="true">
             </button>
         </div>
         <div class="modal-body">
-            <form>
+            <form action="/{{Auth::user()->id}}/post" method="post" enctype="multipart/form-data">
+                @csrf
                 <div class="form-group">
-                    <textarea class="form-control" id="message-text" placeholder="Enter your status"></textarea>
+                    <textarea class="form-control" id="message-text" placeholder="Enter your status" name="status"></textarea>
+                    @error('status')
+                    <p>{{$message}}</p>
+                    @enderror
                 </div>
                 <div class="form-group">
-                    <input class="" type="file">
+                    <input class="" type="file" name="image">
+                    @error('image')
+                    <p>{{$message}}</p>
+                    @enderror
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-outline-dark" type="submit">Post</button>
+                    {{-- <a href="#" class="btn btn-outline-dark" role="button" aria-disabled="true"  data-dismiss="modal">Post</a> --}}
                 </div>
             </form>
         </div>
-        <div class="modal-footer">
-            <a href="#" class="btn btn-outline-dark" role="button" aria-disabled="true"  data-dismiss="modal">Post</a>
-        </div>
+        
     </div>
 </div>
 </div>

@@ -90,5 +90,8 @@ Route::get("interest", "InterestController@index");
 
 // Newsfeed
 Route::get("newsfeed", "NewsfeedController@index");
+Route::post("/{user}/post", "NewsfeedController@post")->name('save_status');
+// Route::get("/{user}/post", "InterestController@index")->name('save_status');
+
 
 

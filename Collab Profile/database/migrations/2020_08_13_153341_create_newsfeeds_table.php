@@ -15,6 +15,9 @@ class CreateNewsfeedsTable extends Migration
     {
         Schema::create('newsfeeds', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->integer('user_id');
+            $table->string('status');
+            $table->string('image')->nullable();
             $table->timestamps();
         });
     }
