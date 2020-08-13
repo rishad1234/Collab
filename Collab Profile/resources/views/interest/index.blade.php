@@ -16,7 +16,7 @@
             </div>
         </div>
     </nav>
-
+    <p style = "display:none" class="get_usr_id">{{Auth::user()->id}}</p>
     <div class="container interestContainer mt-5 mb-5">
         <div class="row">
             <div class="col-sm-12">
