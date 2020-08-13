@@ -18,8 +18,9 @@ class ProfileController extends Controller
 
         $research = \App\Research::where('user_id', Auth()->user()->id)->get();
         $project = \App\Project::where('user_id', Auth()->user()->id)->get();
+        $interest = \App\Interest::where('user_id', Auth()->user()->id)->get();
         $user = new \App\User();
-        return View('profile.index', compact('user', 'research', 'project'));
+        return View('profile.index', compact('user', 'research', 'project', 'interest'));
     }
 
     public function editAbout()

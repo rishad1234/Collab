@@ -224,7 +224,13 @@
                 <h3>Interests</h3>
                 <div class="profileInterests__containLists">
                     <ul class="profileInterests__containLists__lists">
-                        <li>Machine Learning</li>
+                        @forelse ($interest as $item)
+                            <li>{{ $item->interest }}</li>
+                        @empty
+                            <h5>no interest found</h5>   
+                        @endforelse
+                        
+                        {{-- <li>Machine Learning</li>
                         <li>Artificial Intelligent</li>
                         <li>Algorithm</li>
                         <li>Data Science</li>
@@ -241,7 +247,7 @@
                         <li>Algorithm</li>
                         <li>Data Science</li>
                         <li>Image Processing</li>
-                        <li>Internet of things</li>
+                        <li>Internet of things</li> --}}
                     </ul>
                 </div>
             </div>
