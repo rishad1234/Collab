@@ -87,6 +87,8 @@ aria-hidden="true">
                 <div class="post_img pt-2">
                     <img src="{{ asset('storage/' . $item->image) }}" alt="">
                 </div>
+
+                @comments(['model' => $item])
                 <!-- comment starts -->
                 <!-- <div class="post_comments">
 
