@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 class NewsfeedController extends Controller
 {
     public function index(){
-        $posts = \App\Newsfeed::where('user_id', Auth()->user()->id)->get();
+        $posts = \App\Newsfeed::get();
         return View("newsfeed.index", compact("posts"));
     }
 
