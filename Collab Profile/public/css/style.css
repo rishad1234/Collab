@@ -440,3 +440,26 @@
       padding: 5px;
   }
 }
+/* test comment */
+.commentAuthor{
+  font-size: 16px !important;
+}
+.commentContent{
+  font-size: 14px !important;
+}
+.cmd_send:hover .cmd_send_icon{
+  color: white;
+}
+.CommentImg{
+  margin-top: 10px;
+  border-radius: 50%;
+  height: 30px;
+  width: 30px;
+}
+@media(max-width:678px){
+  .CommentDiv{
+    max-width: 80% !important;
+    padding-left: 0px;
+    padding-right:5px;
+  }
+}

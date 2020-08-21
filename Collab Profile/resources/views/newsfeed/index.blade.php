@@ -69,6 +69,7 @@ aria-hidden="true">
         <!-- each post starts-->
 
         @forelse ($posts as $item)
+            <br>
             <div class="post_box">
                 <div class="post_author row">
                     <div class="col-2 col-lg-1 autho_img">
@@ -84,7 +85,7 @@ aria-hidden="true">
                         {{$item->status}}
                     </p>
                 </div>
-                <div class="post_img pt-2">
+                <div class="post_img pt-2 mb-4">
                     <img src="{{ asset('storage/' . $item->image) }}" alt="">
                 </div>
 

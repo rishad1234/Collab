@@ -10,6 +10,7 @@
             integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
         <!-- link css -->
         <link rel="stylesheet" href="/css/style.css">
+        <script src="https://kit.fontawesome.com/19b1b96522.js" crossorigin="anonymous"></script>
     
         <title>Collab | Home</title>
     </head>

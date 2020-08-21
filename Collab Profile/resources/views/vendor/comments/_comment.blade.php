@@ -6,20 +6,20 @@
 @else
   <li id="comment-{{ $comment->getKey() }}" class="media">
 @endif
-    <img class="mr-3" src="https://www.gravatar.com/avatar/{{ md5($comment->commenter->email ?? $comment->guest_email) }}.jpg?s=64" alt="{{ $comment->commenter->name ?? $comment->guest_name }} Avatar">
-    <div class="media-body">
-        <h5 class="mt-0 mb-1">{{ $comment->commenter->name ?? $comment->guest_name }} <small class="text-muted">- {{ $comment->created_at->diffForHumans() }}</small></h5>
-        <div style="white-space: pre-wrap;">{!! $markdown->line($comment->comment) !!}</div>
+    <img class="mr-3 CommentImg" src="https://www.gravatar.com/avatar/{{ md5($comment->commenter->email ?? $comment->guest_email) }}.jpg?s=64" alt="{{ $comment->commenter->name ?? $comment->guest_name }} Avatar">
+    <div class="media-body mt-1">
+        <h5 class="mt-0 mb-1 commentAuthor">{{ $comment->commenter->name ?? $comment->guest_name }} <small class="text-muted">- {{ $comment->created_at->diffForHumans() }}</small></h5>
+        <div class="commentContent" style="white-space: pre-wrap;">{!! $markdown->line($comment->comment) !!}</div>
 
         <div>
             @can('reply-to-comment', $comment)
                 <button data-toggle="modal" data-target="#reply-modal-{{ $comment->getKey() }}" class="btn btn-sm btn-link text-uppercase">Reply</button>
             @endcan
             @can('edit-comment', $comment)
-                <button data-toggle="modal" data-target="#comment-modal-{{ $comment->getKey() }}" class="btn btn-sm btn-link text-uppercase">Edit</button>
+                <!-- <button data-toggle="modal" data-target="#comment-modal-{{ $comment->getKey() }}" class="btn btn-sm btn-link text-uppercase">Edit</button> -->
             @endcan
             @can('delete-comment', $comment)
-                <a href="{{ route('comments.destroy', $comment->getKey()) }}" onclick="event.preventDefault();document.getElementById('comment-delete-form-{{ $comment->getKey() }}').submit();" class="btn btn-sm btn-link text-danger text-uppercase">Delete</a>
+                <!-- <a href="{{ route('comments.destroy', $comment->getKey()) }}" onclick="event.preventDefault();document.getElementById('comment-delete-form-{{ $comment->getKey() }}').submit();" class="btn btn-sm btn-link text-danger text-uppercase">Delete</a> -->
                 <form id="comment-delete-form-{{ $comment->getKey() }}" action="{{ route('comments.destroy', $comment->getKey()) }}" method="POST" style="display: none;">
                     @method('DELETE')
                     @csrf
@@ -43,7 +43,7 @@
                             <div class="modal-body">
                                 <div class="form-group">
                                     <label for="message">Update your message here:</label>
-                                    <textarea required class="form-control" name="message" rows="3">{{ $comment->comment }}</textarea>
+                                    <textarea required class="form-control" name="message" rows="1">{{ $comment->comment }}</textarea>
                                     <small class="form-text text-muted"><a target="_blank" href="https://help.github.com/articles/basic-writing-and-formatting-syntax">Markdown</a> cheatsheet.</small>
                                 </div>
                             </div>
@@ -71,8 +71,8 @@
                             </div>
                             <div class="modal-body">
                                 <div class="form-group">
-                                    <label for="message">Enter your message here:</label>
-                                    <textarea required class="form-control" name="message" rows="3"></textarea>
+                                    <label for="message">Srite something:</label>
+                                    <textarea required class="form-control" name="message" rows="1"></textarea>
                                     <small class="form-text text-muted"><a target="_blank" href="https://help.github.com/articles/basic-writing-and-formatting-syntax">Markdown</a> cheatsheet.</small>
                                 </div>
                             </div>
