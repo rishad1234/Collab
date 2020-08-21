@@ -7,7 +7,8 @@ use Illuminate\Http\Request;
 class NewsfeedController extends Controller
 {
     public function index(){
-        return View("newsfeed.index");
+        $posts = \App\Newsfeed::where('user_id', Auth()->user()->id)->get();
+        return View("newsfeed.index", compact("posts"));
     }
 
     public function post(){
@@ -39,7 +40,7 @@ class NewsfeedController extends Controller
 
         session()->flash('success', 'Research Added Successfully');
 
-        return redirect()->route('profile.index', ['user' => $user->name]);
+        return redirect()->route('newsfeed.index');
 
         
     }

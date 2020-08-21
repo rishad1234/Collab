@@ -31,6 +31,6 @@ class InterestController extends Controller
                 $interest->save();      
             }
         }
-        // return View("interest.index");
+        return redirect()->route('profile.index', ['user' => $user->name]);
     }
 }

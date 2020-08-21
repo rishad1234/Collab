@@ -67,55 +67,58 @@ aria-hidden="true">
     <div class="col-md-2"></div>
     <div class="col-md-8">
         <!-- each post starts-->
-        <div class="post_box">
-            <div class="post_author row">
-                <div class="col-2 col-lg-1 autho_img">
-                    <img src="images/profile-profile-img.jpg" alt="">
-                </div>
-                <div class="col-10 col-lg-11 autho_description pl-4">
-                    <p class="autho_name">Robert C. Merton</p>
-                    <p class="post_time">March 18, 2020</p>
-                </div>
-            </div>
-            <div class="post_body pt-4">
-                <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui, ipsa reiciendis sapiente
-                    asperiores officiis saepe ab aliquam rem ex delectus, totam possimus. Lorem ipsum dolor sit
-                    amet, consectetur adipisicing elit. Omnis facere aliquam assumenda voluptate
-                    doloribus quos doloremque maxime, voluptates atque impedit?
-                </p>
-            </div>
-            <div class="post_img pt-2">
-                <img src="images/suck.jpg" alt="">
-            </div>
-            <!-- comment starts -->
-            <!-- <div class="post_comments">
 
-                <div class="comment_holder">
-                    <p class="commnet_author ">Rakib Ul Hasan</p>
-                    <p class="comment_body">Lorem ipsum dolor sit amet consectetur adipisicing elit. In omnis
-                        quam tempore tenetur? Sint cumque voluptatem provident!</p>
+        @forelse ($posts as $item)
+            <div class="post_box">
+                <div class="post_author row">
+                    <div class="col-2 col-lg-1 autho_img">
+                        <img src="images/profile-profile-img.jpg" alt="">
+                    </div>
+                    <div class="col-10 col-lg-11 autho_description pl-4">
+                        <p class="autho_name">Robert C. Merton</p>
+                        <p class="post_time">{{$item->created_at->format('d/m/Y')}}</p>
+                    </div>
                 </div>
+                <div class="post_body pt-4">
+                    <p>
+                        {{$item->status}}
+                    </p>
+                </div>
+                <div class="post_img pt-2">
+                    <img src="{{ asset('storage/' . $item->image) }}" alt="">
+                </div>
+                <!-- comment starts -->
+                <!-- <div class="post_comments">
 
-                <div class="comment_input">
-                    <form>
-                        <div class="row">
-                            <div class="col-9 col-lg-10">
-                                <div class="form-group">
-                                    <input type="text" class="form-control" id="CommentInput"
-                                        aria-describedby="CommentInputHelp" placeholder="comment">
+                    <div class="comment_holder">
+                        <p class="commnet_author ">Rakib Ul Hasan</p>
+                        <p class="comment_body">Lorem ipsum dolor sit amet consectetur adipisicing elit. In omnis
+                            quam tempore tenetur? Sint cumque voluptatem provident!</p>
+                    </div>
+
+                    <div class="comment_input">
+                        <form>
+                            <div class="row">
+                                <div class="col-9 col-lg-10">
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" id="CommentInput"
+                                            aria-describedby="CommentInputHelp" placeholder="comment">
+                                    </div>
+                                </div>
+                                <div class="col-3 send_com col-lg-2">
+                                    <button type="submit"
+                                        class="btn btn-outline-dark comment_send_btn">Send</button>
                                 </div>
                             </div>
-                            <div class="col-3 send_com col-lg-2">
-                                <button type="submit"
-                                    class="btn btn-outline-dark comment_send_btn">Send</button>
-                            </div>
-                        </div>
-                    </form>
-                </div>
-            </div> -->
-            <!-- comment ends -->
-        </div>
+                        </form>
+                    </div>
+                </div> -->
+                <!-- comment ends -->
+            </div>
+        @empty
+            <p>nothing found :-( </p>
+        @endforelse
+        
         <!-- each post ends-->
     </div>
     <div class="col-md-2"></div>
