@@ -45,14 +45,17 @@ class NewsfeedController extends Controller
         // $status->status = request('status');
         // $status->image = request('image')->store('status_image', 'public');
 
-        if(request()->has('image') || request()->has('status')){
+        if(request()->has('image') || $status->status != ""){
             $status->save();
             session()->flash('success', 'Status added');
             return redirect()->route('newsfeed.index');
+            // dd(request()->has('status'));
+             
             
         }else{
             session()->flash('failed', 'Can not add empty post');
             return redirect()->route('newsfeed.index');
+            // dd("nai");
         }
         
 

@@ -93,7 +93,10 @@ aria-hidden="true">
                     </p>
                 </div>
                 <div class="post_img pt-2 mb-4">
-                    <img src="{{ asset('storage/' . $item->image) }}" alt="">
+                    @if ($item->image != NULL)
+                        <img src="{{ asset('storage/' . $item->image) }}" alt="">
+                    @endif
+                    
                 </div>
 
                 @comments(['model' => $item])
