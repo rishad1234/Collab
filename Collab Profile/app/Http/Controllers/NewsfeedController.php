@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class NewsfeedController extends Controller
 {
@@ -49,13 +50,9 @@ class NewsfeedController extends Controller
             $status->save();
             session()->flash('success', 'Status added');
             return redirect()->route('newsfeed.index');
-            // dd(request()->has('status'));
-             
-            
         }else{
             session()->flash('failed', 'Can not add empty post');
             return redirect()->route('newsfeed.index');
-            // dd("nai");
         }
         
 

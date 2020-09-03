@@ -75,16 +75,24 @@ aria-hidden="true">
     <div class="col-md-8">
         <!-- each post starts-->
 
-        @forelse ($posts as $item)
+        @forelse ($posts as $item )
+
+            @php
+                $path = DB::table('newsfeeds')->select('users.profile_image')->join('users', 'newsfeeds.user_id', 'users.id')->where("users.id", $item->user_id)->get()[0]->profile_image;
+                $name = DB::table('newsfeeds')->select('users.name')->join('users', 'newsfeeds.user_id', 'users.id')->where("users.id", $item->user_id)->get()[0]->name;
+            @endphp
+
             <br>
             <div class="post_box">
                 <div class="post_author row">
                     <div class="col-2 col-lg-1 autho_img">
-                        <img src="images/profile-profile-img.jpg" alt="">
+                        {{-- <img src="images/profile-profile-img.jpg" alt=""> --}}
+                        <img src="{{ asset('storage/' . $path) }}" alt="">
                     </div>
                     <div class="col-10 col-lg-11 autho_description pl-4">
-                        <p class="autho_name">Robert C. Merton</p>
-                        <p class="post_time">{{$item->created_at->format('d/m/Y')}}</p>
+                        <p class="autho_name">{{ $name }}</p>
+                        {{-- <p class="post_time">{{$item->created_at}}</p> --}}
+                        <p class="post_time"> {{ Carbon\Carbon::parse($item->created_at)->format('d-m-yy') }}</p>
                     </div>
                 </div>
                 <div class="post_body pt-4">
