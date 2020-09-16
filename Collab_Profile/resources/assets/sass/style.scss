@@ -1,0 +1,547 @@
+$all-font-color-primary: #39424e;
+$all-font-color-secondary: #738f93;
+$button-bacground-teacher: #32c766;
+$button-bacground-teacher-hover: white;
+$button-bacground-student: white;
+$button-bacground-student-hover: #32c766;
+$btn-background: #32c766;
+$btn-background-hover: #fff;
+$done--choosing-interest-btn: #37515b;
+
+.navbar {
+  .navbar-brand {
+    color: $all-font-color-primary !important;
+    font-size: 32px;
+  }
+  &__menu {
+    &--login:link,
+    &--login:active {
+      color: $all-font-color-primary !important;
+      font-size: 16px;
+    }
+    &--login:hover {
+      color: $all-font-color-secondary !important;
+    }
+  }
+}
+
+.landingCover {
+  width: 100%;
+  .container,
+  .row {
+    height: 100%;
+  }
+  &__left {
+    &__block {
+      margin-top: 15rem;
+      h1 {
+        font-size: 76px;
+        color: $all-font-color-primary;
+      }
+      p {
+        margin-top: 0rem;
+        font-size: 26px;
+        color: $all-font-color-secondary;
+      }
+    }
+    &--registerTeacher {
+      background: $button-bacground-teacher !important;
+      border: 1px solid $button-bacground-teacher;
+      transition: all 0.3s ease;
+      color: $button-bacground-teacher-hover;
+    }
+    &--registerTeacher:hover {
+      background: $button-bacground-teacher-hover !important;
+    }
+    &--registerStudent {
+      background: $button-bacground-student !important;
+      border: 1px solid $button-bacground-teacher;
+      transition: all 0.3s ease;
+      margin-top: 10px;
+    }
+    &--registerStudent:hover {
+      color: $button-bacground-student;
+      background: $button-bacground-student-hover !important;
+    }
+  }
+  &__right {
+    img {
+      margin-top: 10rem;
+      width: 100%;
+      object-fit: contain;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .landingCover {
+    &__left {
+      &__block {
+        margin-top: 5rem;
+        h1 {
+          font-size: 76px;
+        }
+        p {
+          margin-top: 0rem;
+          font-size: 26px;
+        }
+      }
+      &--registerTeacher,
+      &--registerStudent {
+        margin-top: 0.5rem;
+      }
+    }
+  }
+}
+
+// sign-up-prof.html
+.registerFormContainer {
+  &__block {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &__holdBlock {
+      background: white;
+      padding: 1.2rem;
+      width: 500px;
+
+      &--submit {
+        background: $btn-background;
+        border: 1px solid $btn-background;
+        color: white;
+      }
+      &--submit:hover {
+        background: $btn-background-hover;
+      }
+    }
+  }
+}
+
+// login.html
+.loginCover {
+  &__left {
+    margin-top: 15rem;
+    &__block {
+      h2 {
+        color: $all-font-color-primary;
+      }
+      p {
+        color: $all-font-color-secondary;
+        font-size: 20px;
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .loginCover {
+    &__left {
+      margin-top: 10rem;
+      &__block {
+        h2 {
+          color: $all-font-color-primary;
+        }
+        p {
+          color: $all-font-color-secondary;
+          font-size: 20px;
+        }
+        &__holder__right {
+          margin-top: 1.2rem;
+        }
+      }
+    }
+  }
+}
+
+// interest.html
+
+.interestContainer {
+  h2 {
+    color: $all-font-color-secondary;
+  }
+  &__lists {
+    list-style-type: none;
+    padding-inline-start: 0rem;
+    margin-top: 2.5rem;
+    li {
+      display: inline-block;
+      margin-right: 1.9rem;
+      background: $btn-background;
+      padding: 0.9rem;
+      border: 1px solid $btn-background;
+      border-radius: 1.5rem;
+      margin-top: 0.9rem;
+      color: white;
+      cursor: pointer;
+    }
+    li:hover {
+      background: $btn-background-hover;
+      color: black;
+    }
+  }
+  &--doneChoosing {
+    background-color: $done--choosing-interest-btn;
+    color: white;
+    border: 1px solid $done--choosing-interest-btn;
+    border-radius: 0.5rem;
+    padding: 0.5rem 0.9rem;
+  }
+  &--doneChoosing:hover {
+    background-color: white;
+    color: black;
+    
+  }
+}
+
+.addInterest{
+  float:right;
+  input{
+    border: 1px solid $all-font-color-primary;
+    border-radius: 0.3rem;
+    padding: 0.4rem;
+  }
+  input:focus{
+    outline: none;
+  }
+  .btn{
+    background: $all-font-color-secondary;
+    color: white;
+    border: 1px solid $all-font-color-secondary;
+  }
+  .btn:hover{
+    background: white;
+    color: black;
+  }
+}
+
+@media (max-width: 768px) {
+  .interestContainer {
+    h2 {
+      font-size: 24px !important;
+    }
+    &__lists {
+      margin-top: 1.5rem;
+      li {
+        margin-right: 0.1rem;
+        padding: 0.8rem;
+        font-size: 13px;
+        margin-top: 0.5rem;
+      }
+    }
+  }
+  .addInterest{
+    float:left;
+  }
+}
+
+// profile.html
+
+.dropdown-toggle:empty::after {
+  display: none;
+}
+
+.containIntroInfo {
+  background: white;
+  &__coverImg {
+    img{
+      width: 100%;
+      height: 15rem;
+      object-fit: cover;
+    }
+    
+  }
+  &__profileImg {
+    img {
+      width: 10rem;
+      height: 10rem;
+      object-fit: cover;
+      margin-left: 1.5rem;
+      margin-top: -5rem;
+      border-radius: 100%;
+      border: 5px solid white;
+    }
+  }
+  &__info {
+    margin-top: 0.8rem;
+    margin-left: 1.5rem;
+    padding-bottom: 1.3rem;
+    p {
+      padding: 0rem;
+      margin: 0rem;
+    }
+    &__name {
+      font-weight: 500;
+    }
+    &__edit{
+      margin-top: 0.3rem;
+      margin-right: 0.7rem;
+      font-size: 18px;
+      cursor: pointer;
+      color: $all-font-color-secondary;
+    }
+    &__edit:hover{
+      color: $all-font-color-primary;
+    }
+  }
+}
+.about {
+  margin-top: 1.5rem;
+  background: white;
+  padding: 1.3rem;
+  padding-right: 0.7rem;
+  p {
+    padding: 0rem;
+    margin: 0rem;
+  }
+  &__edit{
+    margin-top: 0rem;
+    font-size: 18px;
+    cursor: pointer;
+    color: $all-font-color-secondary;
+  }
+  &__edit:hover{
+    color: $all-font-color-primary;
+  }
+}
+.research {
+  margin-top: 1.5rem;
+  background: white;
+  padding: 1.3rem;
+  &__btn{
+    background: $all-font-color-secondary;
+    color: white;
+    border: 1px solid $all-font-color-secondary;
+    font-size: 12px;
+  }
+  &__btn:hover{
+    background: white;
+    color: $all-font-color-primary;
+    border: 1px solid $all-font-color-secondary;
+  }
+  &__each {
+    cursor: pointer;
+    &__img {
+      img {
+        width: 100%;
+        height: 10rem;
+        object-fit: cover;
+        padding-right: 0.9rem;
+      }
+    }
+    &__info {
+      p {
+        padding: 0rem;
+        margin: 0rem;
+      }
+      a:link,
+      a:visited {
+        text-decoration: none;
+      }
+    }
+  }
+}
+
+.projects {
+  margin-top: 1.5rem;
+  background: white;
+  padding: 1.3rem;
+  &__btn{
+    background: $all-font-color-secondary;
+    color: white;
+    border: 1px solid $all-font-color-secondary;
+    font-size: 12px;
+  }
+  &__btn:hover{
+    background: white;
+    color: $all-font-color-primary;
+    border: 1px solid $all-font-color-secondary;
+  }
+  &__each {
+    cursor: pointer;
+    &__img {
+      img {
+        width: 100%;
+        height: 10rem;
+        object-fit: cover;
+        padding-right: 0.9rem;
+      }
+    }
+    &__info {
+      p {
+        padding: 0rem;
+        margin: 0rem;
+      }
+      a:link,
+      a:visited {
+        text-decoration: none;
+      }
+    }
+  }
+}
+
+@media (max-width: 1024px) {
+  .research {
+    &__each {
+      &__info {
+        p {
+          font-size: 14px;
+        }
+      }
+    }
+  }
+  .projects {
+    &__each {
+      &__info {
+        p {
+          font-size: 14px;
+        }
+      }
+    }
+  }
+}
+@media (max-width: 768px) {
+  .research {
+    &__each {
+      &__img {
+        img {
+          padding-right: 0rem;
+        }
+      }
+      &__info {
+        h5 {
+          margin-top: 1rem;
+        }
+      }
+    }
+  }
+  .projects {
+    &__each {
+      &__img {
+        img {
+          padding-right: 0rem;
+        }
+      }
+      &__info {
+        h5 {
+          margin-top: 1rem;
+        }
+      }
+    }
+  }
+}
+
+.profileInterests {
+  background-color: white;
+  padding: 1.5rem;
+  &__edit{
+    margin-top: 0rem;
+    font-size: 18px;
+    cursor: pointer;
+    color: $all-font-color-secondary;
+  }
+  &__edit:hover{
+    color: $all-font-color-primary;
+  }
+  &__containLists {
+    height: 20rem;
+    overflow: scroll;
+    &__lists {
+      list-style-type: none;
+      padding: 0rem;
+      li {
+        display: inline-block;
+        background: $all-font-color-secondary;
+        margin: 0.5rem 0.5rem 0.5rem 0rem;
+        border: 1px solid $all-font-color-secondary;
+        border-radius: 0.8rem;
+        padding: 0.5rem;
+        font-size: 14px;
+        color: white;
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .profileInterests {
+    margin-top: 1.5rem;
+  }
+}
+
+// newsfeed.html
+
+// navbar design of dropdown
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  padding: 12px 16px;
+  z-index: 1;
+  ul{
+    list-style-type: none;
+    padding:0rem;
+    li{
+      padding: 0.3rem;
+      a:link,
+      a:visited{
+        text-decoration: none;
+        color: $all-font-color-primary;
+      }
+      a:hover{
+        color: $all-font-color-secondary;
+      }
+    }
+  }
+}
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+
+// profile edits
+.containsForm{
+  label{
+    font-size: 20px;
+    font-weight: 500;
+  }
+  .form-group{
+    background: white;
+    padding:1.2rem;
+    border-radius: 0.5rem;
+  }
+}
+
+
+// research-project-template.html
+.researchTemplate{
+  &__holder{
+    img{
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+}
+
+
+
+
+// edit-profile-me-addResearch.html
+.editorResearch{
+  &__holder{
+    &__form{
+      .form-group{
+        background: white;
+        padding:1rem;
+        border-radius: 0.5rem;
+      }
+    }
+  }
+}
