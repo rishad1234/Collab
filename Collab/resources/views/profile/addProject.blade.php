@@ -10,21 +10,21 @@
                 <div class="col-sm-12 editorResearch__holder__form">
                     <form class="mt-3" action="/profile/{{Auth::user()->name}}/add/project" method="post" enctype="multipart/form-data">
                         @csrf
-                        <div class="form-group">
+                        <div class="form-group basinInfoGroup">
                             <label for="thumbnailImg">Choose Thumbnail for your project</label>
                             <input type="file" class="form-control-file" id="thumbnailImg" name="thumbnail_image" accept="image/x-png,image/gif,image/jpeg">
                             @error('thumbnail_image')
                             <p>{{$message}}</p>
                             @enderror
                         </div>
-                        <div class="form-group">
+                        <div class="form-group basinInfoGroup">
                             <label for="title">Enter Title</label>
                             <input type="text" class="form-control" id="title" placeholder="Enter Title" name="title">
                             @error('title')
                             <p>{{$message}}</p>
                             @enderror
                         </div>
-                        <div class="form-group">
+                        <div class="form-group basinInfoGroup">
                             <label for="excerptArtcile">Enter Excerpt</label>
                             <textarea class="form-control" id="excerptArtcile" rows="5" maxlength="200" name="excerpt"></textarea>
                             @error('excerpt')
@@ -37,12 +37,11 @@
                             <p>{{$message}}</p>
                             @enderror
                         </div>
-                        <button class="btn btn-outline-dark getValEditor mt-3 mb-5">Post</button>
+                        <button class="btn btn-outline-dark getValEditor mt-3 mb-5">Add Project</button>
                     </form>
                 </div>
                 <div class="col-sm-6"></div>
             </div>
-            
         </div>
     </div>
 </div>

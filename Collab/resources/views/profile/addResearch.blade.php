@@ -9,28 +9,28 @@
 
             <form class="mt-3" action="/profile/{{Auth::user()->name}}" method="post" enctype="multipart/form-data">
                 @csrf
-                <div class="form-group">
+                <div class="form-group basinInfoGroup">
                     <label for="title">Title</label>
                     <textarea class="form-control" id="about" rows="1" name="title"></textarea>
                     @error('title')
                     <p>{{$message}}</p>
                     @enderror
                 </div>
-                <div class="form-group">
+                <div class="form-group basinInfoGroup">
                     <label for="about">Enter Excerpt</label>
                     <textarea class="form-control" class="content" id="about" rows="6" name="description"></textarea>
                     @error('description')
                     <p>{{$message}}</p>
                     @enderror
                 </div>
-                <div class="form-group">
+                <div class="form-group basinInfoGroup">
                     <label for="exampleFormControlFile1">Upload files</label>
                     <input type="file" class="form-control-file" id="exampleFormControlFile1" name="document">
                     @error('document')
                     <p>{{$message}}</p>
                     @enderror
                 </div>
-                <button class="btn btn-outline-dark">Post</button>
+                <button class="btn btn-outline-dark">Add Research</button>
             </form>
 
         </div>

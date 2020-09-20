@@ -6,22 +6,17 @@
     <div class="row">
         <div class="col-sm-7">
             <h3>About</h3>
-
-
             <form class="mt-3" action="/profile/edit/about/{{Auth::user()->id}}" method="post">
                 @method('PATCH')
                 @csrf
-                <div class="form-group">
+                <div class="form-group basinInfoGroup">
                     <label for="about">Enter about</label>
                 <textarea name="about" class="form-control" id="about" rows="3" > {{Auth::user()->about}}</textarea>
                 </div>
-                <button class="btn btn-outline-dark">Save Information</button>
-            </form>
-
-            
+                <button class="btn btn-outline-dark">Save About</button>
+            </form>    
         </div>
-        <div class="col-sm-5">
-        </div>
+        <div class="col-sm-5"></div>
     </div>
 </div>
 
