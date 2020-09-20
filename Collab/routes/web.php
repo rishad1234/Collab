@@ -93,6 +93,11 @@ Route::get("interest", "InterestController@index");
 Route::get("newsfeed", "NewsfeedController@index")->name('newsfeed.index');
 Route::post("/{user}/post", "NewsfeedController@post")->name('save_status');
 // Route::get("/{user}/post", "InterestController@index")->name('save_status');
+Route::post("saveEdit/{postID}", "NewsfeedController@saveEdit")->name('newsfeed.saveEdit');
+Route::get("edit/{user}", "NewsfeedController@edit")->name('newsfeed.edit');
+Route::get("posts/{user}", "NewsfeedController@getPosts")->name('newsfeed.getPosts');
+Route::get("delete/posts/{postID}", "NewsfeedController@deletePosts")->name('newsfeed.deletePosts');
+
 
 
 

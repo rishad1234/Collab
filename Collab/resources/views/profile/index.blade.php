@@ -292,6 +292,8 @@
                         <li>Internet of things</li> --}}
                     </ul>
                 </div>
+
+                <a href="/posts/{{Auth::user()->id}}" class="btn btn-outline-dark float-right mt-3"> Posts</a>
             </div>
         </div>
     </div>
