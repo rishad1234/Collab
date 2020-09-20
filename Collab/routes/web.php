@@ -15,9 +15,10 @@ Route::get('/', 'MiscController@signupPage')->name('signup');
 
 Route::get('/login/home', 'MiscController@loginPage')->name('login_home');
 
-Route::post('/registerpage', "MiscController@checkRole")->name('signup_valid');
+Route::get('/registerpage/{role}', "MiscController@checkRole")->name('signup_valid');
 
 Auth::routes();
+
 
 Route::get('/message', 'HomeController@index')->name('home');
 

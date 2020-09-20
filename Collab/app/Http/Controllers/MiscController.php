@@ -20,18 +20,41 @@ class MiscController extends Controller
         }
         return view('login');
     }
-    public function checkRole(Request $request){
+    // public function checkRole(Request $request){
+    //     if(!Auth::check()){
+    //         if($request->signup_check == 'professor'){
+    //             $data = [
+    //                 'account_type' => 'professor'
+    //             ];
+    //             //dd("professor");
+    //             return view('auth.register', ["data"=>$data]);
+        
+    //         }else if($request->signup_check == 'student'){
+    //             $data = [
+    //                 'account_type' => 'student'
+    //             ];
+    //             //dd("student");
+    //             return view('auth.register', ["data"=>$data]);
+    //         }else{
+    //             abort(404);
+    //         }
+    //     }else{
+    //         return view('welcome');
+    //     }
+    // }
+    public function checkRole($role){
+        // dd($role);
         if(!Auth::check()){
-            if($request->signup_check == 'professor'){
+            if($role == 1){
                 $data = [
-                    'account_type' => 'professor'
+                    'account_type' => 'Professor'
                 ];
                 //dd("professor");
                 return view('auth.register', ["data"=>$data]);
         
-            }else if($request->signup_check == 'student'){
+            }else if($role == 2){
                 $data = [
-                    'account_type' => 'student'
+                    'account_type' => 'Student'
                 ];
                 //dd("student");
                 return view('auth.register', ["data"=>$data]);

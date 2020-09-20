@@ -8,7 +8,6 @@ use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
-use Illuminate\Http\Request;
 
 class RegisterController extends Controller
 {
@@ -50,7 +49,6 @@ class RegisterController extends Controller
      */
     protected function validator(array $data)
     {
-        //dd("validator");
         return Validator::make($data, [
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
@@ -67,29 +65,11 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-        // dd($data);
-        if($data['role'] == 'professor'){
-            // dd($data['role']);
-            $designation = '';
-            if(isset($data['designation'])){
-                $designation = $data['designation'];
-            }
-
-            $role = Role::where('name', 'Professor')->first();
-
-            return User::create([
-                'name' => $data['name'],
-                'email' => $data['email'],
-                'password' => Hash::make($data['password']),
-                'institution_name' =>$data['institution_name'],
-                'designation' => $designation,
-                'role_id' => $role->id
-            ]);
-        }
         $designation = '';
-        // dd($data['role']);
-        $role = Role::where('name', 'student')->first();
-
+        if(isset($data['designation'])){
+            $designation = $data['designation'];
+        }
+        $role = Role::where('name', request()->role)->first();
         return User::create([
             'name' => $data['name'],
             'email' => $data['email'],
@@ -98,6 +78,5 @@ class RegisterController extends Controller
             'designation' => $designation,
             'role_id' => $role->id
         ]);
-        
     }
 }

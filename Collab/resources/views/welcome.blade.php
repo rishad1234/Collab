@@ -41,16 +41,19 @@
                         <div class="landingCover__left__block">
                             <p>A platform that helps to create collaborations between professors and students according to their field of interests by helping them to create an individual profile, an organised news feed and communication methods.</p>
                         </div>
-                        <form action="{{route('signup_valid')}}" method="POST">
+                        {{-- <form action="{{route('signup_valid')}}" method="POST">
                             @csrf
                             <input type="hidden" name="signup_check" value="professor">
+
                             <button type="submit" class="btn btn-lg landingCover__left--registerTeacher" role="button" aria-pressed="true">Sign up as professor</button>
                         </form>
                         <form action="{{route('signup_valid')}}" method="POST">
                             @csrf
                             <input type="hidden" name="signup_check" value="student">
                             <button type="submit" class="btn btn-lg landingCover__left--registerStudent extraStudnet" role="button" aria-pressed="true">Sign up as student</button>
-                        </form>
+                        </form> --}}
+                        <a href="/registerpage/1" class="btn btn-lg landingCover__left--registerTeacher">Sign up as professor</a>
+                        <a href="/registerpage/2" class="btn btn-lg landingCover__left--registerStudent extraStudnet">Sign up as Student</a>
                     </div>
                     <div class="col-sm-6 landingCover__right">
                         <img class="d-none d-md-block" src="/images/index-cover-img.png" alt="">

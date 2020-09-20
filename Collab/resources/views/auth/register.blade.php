@@ -30,7 +30,7 @@
                     </div>
                     <?php if(isset($data)){
 
-                        if($data['account_type'] == 'professor'){
+                        if($data['account_type'] == 'Professor'){
                             ?>
                             <div class="form-group">
                                 <label for="InputDesignation">Designation</label>
@@ -72,7 +72,7 @@
                         
                     </div>
                     <button type="submit" class="registerFormContainer__block__holdBlock--submit">
-                        {{ __('Register') }}
+                        Register
                     </button>
                 </form>
             </div>
