@@ -10,15 +10,43 @@ use Illuminate\Http\Request;
 | contains the "web" middleware group. Now create something great!
 |
 */
-// Auth::routes();
-Route::get('/', 'MiscController@signupPage')->name('signup');
 
-Route::get('/login/home', 'MiscController@loginPage')->name('login_home');
+Route::get('/', function () {
+    if(Auth::check()){
+        return redirect()->route("newsfeed.index");
+    }
+    return view('welcome');
+})->name('signup');
 
-Route::get('/registerpage/{role}', "MiscController@checkRole")->name('signup_valid');
+Route::get('/login/home', function(){
+    if(Auth::check()){
+        return redirect()->route("newsfeed.index");
+    }
+    return view('login');
+})->name('login_home');
+
+Route::post('/signup', function(Request $request){
+    if(!Auth::check()){
+        if($request->signup_check == 'professor'){
+            $data = [
+                'account_type' => 'professor'
+            ];
+            return view('auth.register', ["data"=>$data]);
+    
+        }else if($request->signup_check == 'student'){
+            $data = [
+                'account_type' => 'student'
+            ];
+            return view('auth.register', ["data"=>$data]);
+        }else{
+            abort(404);
+        }
+    }else{
+        return view('welcome');
+    }
+})->name('signup_valid');
 
 Auth::routes();
-
 
 Route::get('/message', 'HomeController@index')->name('home');
 
@@ -75,6 +103,6 @@ Route::get("delete/posts/{postID}", "NewsfeedController@deletePosts")->name('new
 
 /// chat
 Route::get('/contacts', 'ContactsController@get');
-Route::post('/conversation/start', 'InitiateMessage@sendMessage')->name('initiate.send');;
+Route::post('/conversation/start', 'InitiateMessage@sendMessage')->name('initiate.send');
 Route::get('/conversation/{id}', 'ContactsController@getMessagesFor');
 Route::post('/conversation/send', 'ContactsController@send');

@@ -18,7 +18,13 @@
             {{-- <button type="button" class="btn btn-outline-dark remove_article"><i class="fas fa-trash-alt"></i> Remove</button> --}}
             {{-- <a href="/profile/delete/project/{{$project[0]->id}}" class="btn btn-outline-dark edit_article"><i class="fas fa-edit"></i>  Delete</a> --}}
             <div class="researchTemplate__holder mt-3">
-                <img style="width:100%" src="{{ asset('storage/' . $project[0]->thumbnail_image) }}" alt="">
+                {{-- <img style="width:100%" src="{{ asset('storage/' . $project[0]->thumbnail_image) }}" alt=""> --}}
+
+                @if ($project[0]->thumbnail_image)
+                    <img style="width:100%" src=" {{ asset('storage/' . $project[0]->thumbnail_image) }}" alt="">
+                @else
+                    <img style="width:100%" src="/images/project-img.jpg" alt="">
+                @endif
                 {{-- <br><br> --}}
                 {{-- <h3>Title of research paper/ published paper/ projects</h3> --}}
                 

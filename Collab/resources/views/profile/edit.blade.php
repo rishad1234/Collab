@@ -13,42 +13,51 @@
                     <label for="coverImg">Choose Profile Photo</label>
                     <input type="file" class="form-control-file" id="coverImg" name="profile_image" accept="image/x-png,image/gif,image/jpeg">
                     @error('profile_image')
-                    <p>{{$message}}</p>
+                    <p style="color:red;font-weight:bold">{{$message}}</p>
                     @enderror
+                    
                 </div>
                 <div class="form-group basinInfoGroup">
                     <label for="profileImg">Choose Cover Picture</label>
                     <input type="file" class="form-control-file" id="profileImg" name="cover_image" accept="image/x-png,image/gif,image/jpeg">
                     @error('cover_image')
-                    <p>{{$message}}</p>
+                    <p style="color:red;font-weight:bold">{{$message}}</p>
                     @enderror
+
+                    
                 </div>
                 <div class="form-group basinInfoGroup">
                     <label for="name" >Enter your name</label>
                     <input type="text" class="form-control" id="name" name="name" value="{{Auth::user()->name}}">
                     @error('name')
-                    <p>{{$message}}</p>
+                    <p style="color:red;font-weight:bold">{{$message}}</p>
                     @enderror
+
+                   
                 </div>
                 <div class="form-group basinInfoGroup">
                     <label for="designation">Enter your designation</label>
                     <input type="text" class="form-control" id="designation" name="designation" value="{{Auth::user()->designation}}">
                     @error('designation')
-                    <p>{{$message}}</p>
+      
+                        <p style="color:red;font-weight:bold">{{$message}}</p>
+                    
                     @enderror
+
+                    
                 </div>
                 <div class="form-group basinInfoGroup">
                     <label for="institution_name">Enter your institution</label>
                     <input type="text" class="form-control" id="institution_name" name="institution_name" value="{{Auth::user()->institution_name}}">
                     @error('institution_name')
-                    <p>{{$message}}</p>
+                    <p style="color:red;font-weight:bold">{{$message}}</p>
                     @enderror
                 </div>
                 <div class="form-group basinInfoGroup">
                     <label for="country">Enter your country</label>
                     <input type="text" class="form-control" id="country" name ="country" value="{{Auth::user()->country}}">
                     @error('country')
-                    <p>{{$message}}</p>
+                    <p style="color:red;font-weight:bold">{{$message}}</p>
                     @enderror
                 </div>
                 <div class="">

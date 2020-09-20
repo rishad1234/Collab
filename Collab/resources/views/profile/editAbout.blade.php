@@ -12,6 +12,9 @@
                 <div class="form-group basinInfoGroup">
                     <label for="about">Enter about</label>
                 <textarea name="about" class="form-control" id="about" rows="3" > {{Auth::user()->about}}</textarea>
+                @error('about')
+                    <p style="color:red;font-weight:bold">{{$message}}</p>
+                    @enderror
                 </div>
                 <button class="btn btn-outline-dark">Save About</button>
             </form>    
