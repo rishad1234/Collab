@@ -74,7 +74,7 @@ class NewsfeedController extends Controller
 
     public function getPosts($id)
     {
-        $posts = \App\Newsfeed::where('user_id', $id)->get();
+        $posts = \App\Newsfeed::where('user_id', $id)->orderBy("created_at", "DESC")->get();
         return View("newsfeed.ownPost", compact("posts"));
     }
 

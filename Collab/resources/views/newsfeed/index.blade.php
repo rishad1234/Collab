@@ -98,7 +98,7 @@ aria-hidden="true">
                     <div class="col-10 col-lg-11 autho_description pl-4">
                         <p class="autho_name"><a href="/profile/{{ $item->user_id }}">{{ $user_name }}</a></p>
                         {{-- <p class="post_time">{{$item->created_at}}</p> --}}
-                        <p class="post_time"> {{ Carbon\Carbon::parse($item->created_at)->format('d-m-yy') }}</p>
+                        <p class="post_time"> {{ Carbon\Carbon::parse($item->created_at)->format('F j, Y h:ia') }}</p>
                     </div>
                 </div>
                 <div class="uploadedStatus">
