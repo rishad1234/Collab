@@ -582,9 +582,12 @@
   padding: 30px;
   border-radius: 10px;
 }
-/* profile */
+/* profile + edit profile */
 .imageInEdit img{
   width: 100%;
   height: 320px;
   object-fit: contain;
+}
+.basinInfoGroup{
+  background: #f8f9fa !important;
 }
