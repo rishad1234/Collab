@@ -80,7 +80,7 @@
             </div>
             <div class="about">
                 @if($user->id == Auth::user()->id)
-                <a href="/profile/{{$user->name}}/edit/about"><i class="fas fa-edit float-right about__edit"></i></a>
+                <a href="/profile/{{$user->id}}/edit/about"><i class="fas fa-edit float-right about__edit"></i></a>
                 @endif
                 <h4>About</h4>
                 <p>{{ $user->about }}</p>
