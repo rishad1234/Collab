@@ -13,11 +13,11 @@
                         @method('PATCH')
 
                         {{-- have a bug here.. can not edit thumbnail image. thats why this part is commented --}}
-                        {{-- <div class="form-group">
+                        <div class="form-group">
                             <label for="thumbnailImg">Choose Thumbnail for your project</label>
                             <input type="file" class="form-control-file" id="thumbnailImg" name="thumbnail_image">
                             
-                        </div> --}}
+                        </div>
                         <div class="form-group">
                             <label for="title">Enter Title</label>
                             <input type="text" class="form-control" id="title" placeholder="Enter Title" name="title" value="{{ $project[0]->title }}">
