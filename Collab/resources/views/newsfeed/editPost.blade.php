@@ -13,33 +13,41 @@
 
 <div class="container mt-5">
     <div class="row">
-        <div class="col-md-12">
+        <div class="col-md-8">
             <form action="/saveEdit/{{$post[0]->id}}" method="post" enctype="multipart/form-data">
-            @csrf
-            <div class="form-group">
-                <textarea class="form-control" id="message-text" placeholder="Enter your status" name="status" >{{ $post[0]->status }}</textarea>
-                @error('status')
-                <p>{{$message}}</p>
-                @enderror
-            </div>
-            <div class="form-group">
-                <img src="{{ asset('storage/' . $post[0]->image) }}" alt="">
-
-                <input class="" type="file" name="image" value="{{$post[0]->image}}">
-                @error('image')
-                <p>{{$message}}</p>
-                @enderror
-            </div>
-
-
-            <div class="modal-footer">
-                <button class="btn btn-outline-dark" type="submit">Update</button>
-            </div>
-        </form>
-        <a href="/delete/posts/{{$post[0]->id}}" class="btn btn-outline-dark float-right mt-3"> Delete</a>
+                @csrf
+                <button class="btn btn-outline-dark float-left mr-3" type="submit">Update</button>
+                <a href="/delete/posts/{{$post[0]->id}}" class="btn btn-outline-dark"> Delete</a>
+                <h4 class="mt-3">Edit Status</h4>
+                <div class="form-group">
+                    <textarea class="form-control" id="message-text" placeholder="Enter your status" name="status" >{{ $post[0]->status }}</textarea>
+                    @error('status')
+                    <p>{{$message}}</p>
+                    @enderror
+                </div>
+                <div class="form-group">
+                    <div class="imageInEdit">
+                        <img src="{{ asset('storage/' . $post[0]->image) }}" alt="">
+                    </div>
+                    @if(isset($post[0]->image))
+                        <h4 class="mt-3">Edit Image File</h4>
+                    @else
+                        <h4 class="mt-3">Add Image File</h4>
+                    @endif
+                    <input class="form-control-file" type="file" name="image" value="{{$post[0]->image}}" id="getFile">
+                    @error('image')
+                    <p>{{$message}}</p>
+                    @enderror
+                </div>
+                <!-- <div class="modal-footer">
+                    <button class="btn btn-outline-dark" type="submit">Update</button>
+                </div> -->
+            </form>
+            
         </div>
     </div>
 </div>
+
 
 
 

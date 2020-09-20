@@ -582,3 +582,9 @@
   padding: 30px;
   border-radius: 10px;
 }
+/* profile */
+.imageInEdit img{
+  width: 100%;
+  height: 320px;
+  object-fit: contain;
+}
