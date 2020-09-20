@@ -13,7 +13,7 @@
                 <p> {{$item->description}} </p>
                 {{-- <a href=" {{route('downloadFile', $item->id)}} " class="btn btn-outline-dark">Download PDF</a> --}}
                 <a href="/storage/{{$item->document}}" class="btn btn-outline-dark">Read Document</a>
-                <a href="/profile/{{Auth::user()->name}}/delete/research/{{$item->id}}" class="btn btn-outline-dark edit_article"><i class="fas fa-edit"></i>  Delete</a>
+                <a href="/profile/{{Auth::user()->id}}/delete/research/{{$item->id}}" class="btn btn-outline-dark edit_article"><i class="fas fa-edit"></i>  Delete</a>
             @empty
                 
             @endforelse

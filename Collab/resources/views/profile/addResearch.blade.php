@@ -7,7 +7,7 @@
     <div class="row">
         <div class="col-sm-7">
 
-            <form class="mt-3" action="/profile/{{Auth::user()->name}}" method="post" enctype="multipart/form-data">
+            <form class="mt-3" action="/profile/{{Auth::user()->id}}" method="post" enctype="multipart/form-data">
                 @csrf
                 <div class="form-group basinInfoGroup">
                     <label for="title">Title</label>

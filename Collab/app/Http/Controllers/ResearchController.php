@@ -56,13 +56,13 @@ class ResearchController extends Controller
         return redirect()->route('profile.index', ['id' => Auth()->user()->id]);
     }
 
-    public function readResearch($user, $id)
+    public function readResearch($user_id, $id)
     {
         $research = \App\Research::where('id', $id)->get();
         return View('profile.readResearch', compact('research'));
     }
 
-    public function deleteResearch($user_name,$id)
+    public function deleteResearch($user_id,$id)
     {
         $research = \App\Research::find($id);
         $research->delete();

@@ -65,10 +65,10 @@ Route::patch('/profile/edit/about/{user}', 'ProfileController@updateAbout');
 
 
 // Research Controller Routes
-Route::get('/profile/{user}/add/research', 'ResearchController@addResearch');
-Route::post('/profile/{user}', 'ResearchController@postResearch');
-Route::get('/profile/{user}/research/{id}', 'ResearchController@readResearch');
-route::get('/profile/{user_name}/delete/research/{id}', 'ResearchController@deleteResearch');
+Route::get('/profile/{id}/add/research', 'ResearchController@addResearch');
+Route::post('/profile/{id}', 'ResearchController@postResearch');
+Route::get('/profile/{user_id}/research/{id}', 'ResearchController@readResearch');
+route::get('/profile/{user_id}/delete/research/{id}', 'ResearchController@deleteResearch');
 Route::get('profile/research/download/{id}', 'ProfileController@downloadPDF')->name('downloadFile');
 
 
