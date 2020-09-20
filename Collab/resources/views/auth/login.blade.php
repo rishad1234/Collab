@@ -5,7 +5,7 @@
 <div class="container registerFormContainer">
     <div class="row h-100">
         <div class="col-sm-12 registerFormContainer__block">
-            <div class="registerFormContainer__block__holdBlock">
+            <div class="registerFormContainer__block__holdBlock logInFormStyle">
 
                     <form method="POST" action="{{ route('login') }}">
                         @csrf
@@ -49,7 +49,7 @@
                         <div class="form-group">
                             <div class="">
                                 <button type="submit" class="btn btnLogin">
-                                    {{ __('Login') }}
+                                    {{ __('Please Login') }}
                                 </button>
 
                                 {{-- @if (Route::has('password.request'))

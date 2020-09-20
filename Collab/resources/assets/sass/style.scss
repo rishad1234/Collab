@@ -45,19 +45,20 @@ $done--choosing-interest-btn: #37515b;
       }
     }
     &--registerTeacher {
-      background: $button-bacground-teacher !important;
+      background: $button-bacground-student  !important;
       border: 1px solid $button-bacground-teacher;
       transition: all 0.3s ease;
-      color: $button-bacground-teacher-hover;
+      color: black;
     }
     &--registerTeacher:hover {
-      background: $button-bacground-teacher-hover !important;
+      color: $button-bacground-student;
+      background: $button-bacground-student-hover !important;
     }
     &--registerStudent {
       background: $button-bacground-student !important;
       border: 1px solid $button-bacground-teacher;
       transition: all 0.3s ease;
-      margin-top: 10px;
+      // margin-top: 10px;
     }
     &--registerStudent:hover {
       color: $button-bacground-student;
@@ -71,6 +72,9 @@ $done--choosing-interest-btn: #37515b;
       object-fit: contain;
     }
   }
+}
+.extraStudnet{
+  margin-top: 10px;
 }
 
 @media (max-width: 768px) {
@@ -98,11 +102,12 @@ $done--choosing-interest-btn: #37515b;
 .registerFormContainer {
   &__block {
     display: flex;
-    align-items: center;
     justify-content: center;
+    align-items: center;
+    
 
     &__holdBlock {
-      background: white;
+      background: #f8f9fa !important;
       padding: 1.2rem;
       width: 500px;
 

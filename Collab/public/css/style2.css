@@ -55,7 +55,9 @@
   align-items: center;
   justify-content: center; }
   .registerFormContainer__block__holdBlock {
-    background: white;
+    margin-top: 20px;
+    background: #f8f9fa !important;
+    border-radius: 10px;
     padding: 1.2rem;
     width: 500px; }
     .registerFormContainer__block__holdBlock--submit {
@@ -79,7 +81,7 @@
     font-size: 20px; }
   .btnLogin{
     color:#000 !important;
-    border: 1px solid black;
+    border: 1px solid #32c766;
   }
   .btnLogin:hover{
     background-color: #32c766;

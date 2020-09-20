@@ -49,7 +49,7 @@
                         <form action="{{route('signup_valid')}}" method="POST">
                             @csrf
                             <input type="hidden" name="signup_check" value="student">
-                            <button type="submit" class="btn btn-lg landingCover__left--registerStudent" role="button" aria-pressed="true">Sign up as student</button>
+                            <button type="submit" class="btn btn-lg landingCover__left--registerStudent extraStudnet" role="button" aria-pressed="true">Sign up as student</button>
                         </form>
                     </div>
                     <div class="col-sm-6 landingCover__right">

@@ -46,13 +46,13 @@ $done--choosing-interest-btn: #37515b;
     }
     &--registerTeacher {
       background: $button-bacground-teacher !important;
-      border: 1px solid $button-bacground-teacher;
+      border: 1px solid $button-bacground-student;
       transition: all 0.3s ease;
       color: $button-bacground-teacher-hover;
       display: inline-block;
     }
     &--registerTeacher:hover {
-      background: $button-bacground-teacher-hover !important;
+      background: $button-bacground-student-hover !important;
     }
     &--registerStudent {
       background: $button-bacground-student !important;
@@ -89,7 +89,7 @@ $done--choosing-interest-btn: #37515b;
       }
       &--registerTeacher,
       &--registerStudent {
-        margin-top: 0.5rem;
+        margin-top: 0rem;
       }
     }
   }

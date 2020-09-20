@@ -38,21 +38,21 @@
 }
 
 .landingCover__left--registerTeacher {
-  background: #32c766 !important;
+  background: white !important;
   border: 1px solid #32c766;
   transition: all 0.3s ease;
-  color: white;
+  color: black;
 }
 
 .landingCover__left--registerTeacher:hover {
-  background: white !important;
+  color: white;
+  background: #32c766 !important;
 }
 
 .landingCover__left--registerStudent {
   background: white !important;
   border: 1px solid #32c766;
   transition: all 0.3s ease;
-  margin-top: 10px;
 }
 
 .landingCover__left--registerStudent:hover {
@@ -65,6 +65,10 @@
   width: 100%;
   -o-object-fit: contain;
      object-fit: contain;
+}
+
+.extraStudnet {
+  margin-top: 10px;
 }
 
 @media (max-width: 768px) {
@@ -89,12 +93,12 @@
 
 .registerFormContainer__block {
   display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: center;
 }
 
 .registerFormContainer__block__holdBlock {
-  background: white;
+  background: #f8f9fa !important;
   padding: 1.2rem;
   width: 500px;
 }

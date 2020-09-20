@@ -47,7 +47,7 @@
                             </div>
                             <div class="col-sm-6 loginCover__left__block__holder__right">
                                 <h2>For Students</h2>
-                                <p>share knowledge, create portfolio, connect with brilliant minds</p>
+                                <p>Gather knowledge, build projects, showcase your research, spread yourself</p>
                                 <a href="{{route('login')}}" class="btn landingCover__left--registerStudent" role="button" aria-pressed="true">Login as student</a>
                             </div>
                         </div>

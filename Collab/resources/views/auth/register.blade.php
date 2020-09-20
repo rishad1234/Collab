@@ -47,7 +47,7 @@
                         }
                     } ?>
                     <div class="form-group">
-                        <label for="InputEmail">Institutional Email address</label>
+                        <label for="InputEmail">Email address</label>
                         <input id="InputEmail" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email">
 
                         @error('email')
