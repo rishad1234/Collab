@@ -38,7 +38,9 @@
                     
 
                     @if($user->id != Auth::user()->id)
-                        <button type="button" class="btn btn-outline-dark float-right mt-3" data-toggle="modal" data-target="#msgModal">Message</button>
+                        <button type="button" class="btn btn-outline-dark float-right mt-3 mr-2" data-toggle="modal" data-target="#msgModal">Message</button>
+                    @else
+                        <a href="/posts/{{Auth::user()->id}}" class="btn btn-outline-dark float-right mt-3 mr-2">View All Posts</a>
                     @endif
 
                 </div>
@@ -293,7 +295,10 @@
                     </ul>
                 </div>
 
-                <a href="/posts/{{Auth::user()->id}}" class="btn btn-outline-dark float-right mt-3"> Posts</a>
+                
+            </div>
+            <div class="">
+                
             </div>
         </div>
     </div>

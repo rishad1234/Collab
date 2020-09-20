@@ -11,34 +11,38 @@
     </div>
 @endif
 
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-md-12">
+            <form action="/saveEdit/{{$post[0]->id}}" method="post" enctype="multipart/form-data">
+            @csrf
+            <div class="form-group">
+                <textarea class="form-control" id="message-text" placeholder="Enter your status" name="status" >{{ $post[0]->status }}</textarea>
+                @error('status')
+                <p>{{$message}}</p>
+                @enderror
+            </div>
+            <div class="form-group">
+                <img src="{{ asset('storage/' . $post[0]->image) }}" alt="">
 
-{{-- {{ dd($post[0]->image) }} --}}
-<form action="/saveEdit/{{$post[0]->id}}" method="post" enctype="multipart/form-data">
-    @csrf
-    <div class="form-group">
-        <textarea class="form-control" id="message-text" placeholder="Enter your status" name="status" >{{ $post[0]->status }}</textarea>
-        @error('status')
-        <p>{{$message}}</p>
-        @enderror
+                <input class="" type="file" name="image" value="{{$post[0]->image}}">
+                @error('image')
+                <p>{{$message}}</p>
+                @enderror
+            </div>
+
+
+            <div class="modal-footer">
+                <button class="btn btn-outline-dark" type="submit">Update</button>
+            </div>
+        </form>
+        <a href="/delete/posts/{{$post[0]->id}}" class="btn btn-outline-dark float-right mt-3"> Delete</a>
+        </div>
     </div>
-    <div class="form-group">
-        <img src="{{ asset('storage/' . $post[0]->image) }}" alt="">
-
-        <input class="" type="file" name="image" value="{{$post[0]->image}}">
-        @error('image')
-        <p>{{$message}}</p>
-        @enderror
-    </div>
+</div>
 
 
-    <div class="modal-footer">
-        <button class="btn btn-outline-dark" type="submit">Post</button>
-        {{-- <a href="#" class="btn btn-outline-dark" role="button" aria-disabled="true"  data-dismiss="modal">Post</a> --}}
-    </div>
-</form>
-<a href="/delete/posts/{{$post[0]->id}}" class="btn btn-outline-dark float-right mt-3"> Delete</a>
 
-{{-- {{dd($post)}} --}}
 
 
 

@@ -144,7 +144,10 @@ aria-hidden="true">
                 <!-- comment ends -->
             </div>
         @empty
-            <p>nothing found :-( </p>
+            <div class="initNewsfeed">
+                <h2>Welcome {{Auth::user()->name}}</h2>
+                <h3>There is no post to show</h3>
+            </div>
         @endforelse
         
         <!-- each post ends-->

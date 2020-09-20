@@ -571,3 +571,14 @@
     float: left !important;
   }
 }
+
+/* feed design */
+.initNewsfeed{
+  background: #f8f9fa;
+  font-weight: bold;
+  text-align: center;
+  font-family: sans-serif;
+  color: black;
+  padding: 30px;
+  border-radius: 10px;
+}
