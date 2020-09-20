@@ -6,7 +6,8 @@
     <div class="row h-100">
         <div class="col-sm-12 registerFormContainer__block">
             <div class="registerFormContainer__block__holdBlock">
-                <form method="POST" action="{{ route('register') }}">
+                {{-- <form method="POST" action="{{ route('register') }}"> --}}
+                <form method="POST" action="/register">
                     <input type="hidden" name="role" value="{{$data['account_type']}}">
                     @csrf
                     <div class="form-group">
