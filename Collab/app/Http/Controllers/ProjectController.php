@@ -113,6 +113,6 @@ class ProjectController extends Controller
         $project = \App\Project::find($id);
         $project->delete();
         session()->flash('success', 'Project Deleted Successfully');
-        return redirect()->route('profile.index', ['id' => Auth()->user()->name]);
+        return redirect()->route('profile.index', ['id' => Auth()->user()->id]);
     }
 }
