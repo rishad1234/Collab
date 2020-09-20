@@ -12,7 +12,7 @@
                         @csrf
                         <div class="form-group">
                             <label for="thumbnailImg">Choose Thumbnail for your project</label>
-                            <input type="file" class="form-control-file" id="thumbnailImg" name="thumbnail_image">
+                            <input type="file" class="form-control-file" id="thumbnailImg" name="thumbnail_image" accept="image/x-png,image/gif,image/jpeg">
                             @error('thumbnail_image')
                             <p>{{$message}}</p>
                             @enderror

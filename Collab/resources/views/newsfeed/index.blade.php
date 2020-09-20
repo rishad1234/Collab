@@ -51,7 +51,7 @@ aria-hidden="true">
                     @enderror
                 </div>
                 <div class="form-group">
-                    <input class="" type="file" name="image">
+                    <input class="" type="file" name="image" accept="image/x-png,image/gif,image/jpeg">
                     @error('image')
                     <p>{{$message}}</p>
                     @enderror
@@ -145,6 +145,9 @@ aria-hidden="true">
             </div>
         @empty
             <p>nothing found :-( </p>
+
+
+            
         @endforelse
         
         <!-- each post ends-->
