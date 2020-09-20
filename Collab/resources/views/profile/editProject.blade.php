@@ -16,28 +16,26 @@
                         {{-- <div class="form-group">
                             <label for="thumbnailImg">Choose Thumbnail for your project</label>
                             <input type="file" class="form-control-file" id="thumbnailImg" name="thumbnail_image">
-                            @error('thumbnail_image')
-                            <p>{{$message}}</p>
-                            @enderror
+                            
                         </div> --}}
                         <div class="form-group">
                             <label for="title">Enter Title</label>
                             <input type="text" class="form-control" id="title" placeholder="Enter Title" name="title" value="{{ $project[0]->title }}">
                             @error('title')
-                            <p>{{$message}}</p>
+                                <p style="color:red;font-weight:bold">{{$message}}</p>
                             @enderror
                         </div>
                         <div class="form-group">
                             <label for="excerptArtcile">Enter Excerpt</label>
                             <textarea class="form-control" id="excerptArtcile" rows="5" maxlength="200" name="excerpt">{{ $project[0]->excerpt }}</textarea>
                             @error('excerpt')
-                            <p>{{$message}}</p>
+                                <p style="color:red;font-weight:bold">{{$message}}</p>
                             @enderror
                         </div>
                         <div>
                             <textarea class="content" name="description">{{ $project[0]->description }} </textarea>
                             @error('description')
-                            <p>{{$message}}</p>
+                                <p style="color:red;font-weight:bold">{{$message}}</p>
                             @enderror
                         </div>
                         <button class="btn btn-outline-dark getValEditor mt-3 mb-5">Save Change</button>
