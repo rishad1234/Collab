@@ -56,9 +56,6 @@ class NewsfeedController extends Controller
         if(request()->has('status')){
             $status->status = request('status');
         }
-
-        
-
         // $status->status = request('status');
         // $status->image = request('image')->store('status_image', 'public');
 
@@ -69,11 +66,6 @@ class NewsfeedController extends Controller
         }else{
             session()->flash('failed', 'Can not add empty post');
             return redirect()->route('newsfeed.index');
-        }
-        
-
-        
-
-        
+        }   
     }
 }
