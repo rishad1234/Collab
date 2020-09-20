@@ -11,14 +11,14 @@
             @method('PATCH')
                 <div class="form-group">
                     <label for="coverImg">Choose Profile Photo</label>
-                    <input type="file" class="form-control-file" id="coverImg" name="profile_image">
+                    <input type="file" class="form-control-file" id="coverImg" name="profile_image" accept="image/x-png,image/gif,image/jpeg">
                     @error('profile_image')
                     <p>{{$message}}</p>
                     @enderror
                 </div>
                 <div class="form-group">
                     <label for="profileImg">Choose Cover Picture</label>
-                    <input type="file" class="form-control-file" id="profileImg" name="cover_image">
+                    <input type="file" class="form-control-file" id="profileImg" name="cover_image" accept="image/x-png,image/gif,image/jpeg">
                     @error('cover_image')
                     <p>{{$message}}</p>
                     @enderror
