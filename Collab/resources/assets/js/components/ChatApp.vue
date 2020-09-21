@@ -7,7 +7,8 @@
 
 <script>
     $( document ).ready(function() {
-        $(".chat-app").css("height", $(window).height()-93);
+        var getHeight = $(window).outerHeight();//93
+        $(".chat-app").css("height", getHeight-93);
     });
     import Conversation from './Conversation';
     import ContactsList from './ContactsList';

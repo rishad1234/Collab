@@ -21,7 +21,6 @@
                                     </span>
                                 @enderror
                         </div>
-
                         <div class="form-group">
                             <label for="password" class="col-form-label">{{ __('Password') }}</label>
 
@@ -49,7 +48,7 @@
                         <div class="form-group">
                             <div class="">
                                 <button type="submit" class="btn btnLogin">
-                                    {{ __('Please Login') }}
+                                    {{ __('Login') }}
                                 </button>
 
                                 {{-- @if (Route::has('password.request'))

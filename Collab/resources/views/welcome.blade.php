@@ -53,7 +53,7 @@
                             <button type="submit" class="btn btn-lg landingCover__left--registerStudent extraStudnet" role="button" aria-pressed="true">Sign up as student</button>
                         </form> --}}
                         <a href="/registerpage/1" class="btn btn-lg landingCover__left--registerTeacher">Sign up as professor</a>
-                        <a href="/registerpage/2" class="btn btn-lg landingCover__left--registerStudent extraStudnet">Sign up as Student</a>
+                        <a href="/registerpage/2" class="btn btn-lg landingCover__left--registerStudent ">Sign up as Student</a>
                     </div>
                     <div class="col-sm-6 landingCover__right">
                         <img class="d-none d-md-block" src="/images/index-cover-img.png" alt="">
