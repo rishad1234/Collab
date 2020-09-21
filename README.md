@@ -85,10 +85,11 @@ A platform that helps to create collaborations between professors and students a
 12. Open .env file
 ![](collab_md_file/env_file.PNG)
 
-13. Set DB_DATABASE=collab_db
-14. Set DB_USERNAME=root
-15. Set BROADCAST_DRIVER=pusher
-16. Replace the following code:
+13. APP_DEBUG=false
+14. Set DB_DATABASE=collab_db
+15. Set DB_USERNAME=root
+16. Set BROADCAST_DRIVER=pusher
+17. Replace the following code:
 
 ```
 PUSHER_APP_ID=959829
@@ -97,7 +98,7 @@ PUSHER_APP_SECRET=4974465e28bbaf1aabe3
 PUSHER_APP_CLUSTER=mt1
 ```
 
-17. Execute the following commands:
+18. Execute the following commands:
 
 `php artisan key:generate`
 
