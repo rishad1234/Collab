@@ -105,6 +105,8 @@ PUSHER_APP_CLUSTER=mt1
 
 `php artisan storage:link`
 
+`composer dump-autoload`
+
 `php artisan db:seed`
 
 `npm run dev`
