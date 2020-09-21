@@ -12,15 +12,15 @@
 <div class="container portfolioContainer mt-5 mb-5">
     {{-- flash message start --}}
     @if (session()->has('success'))
-        <div class="alert alert-dismissable alert-success">
-            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-            </button>
-            <strong>
-                {!! session()->get('success') !!}
-            </strong>
-        </div>
-    @endif
+            <script>
+                setTimeout(function(){ $('.successMSG').fadeOut('fast'); }, 1500);
+            </script>
+            <div class="alert alert-success successMSG">
+                <strong>
+                    {!! session()->get('success') !!}
+                </strong>
+            </div>
+        @endif
     {{-- flash message end --}}
     <div class="row">
         <div class="col-sm-8 wrapperProfile">

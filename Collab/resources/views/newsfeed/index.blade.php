@@ -5,11 +5,7 @@
 
 <link rel="stylesheet" type="text/css" href="{{ asset('css/style.css') }}" >
 
-@if (session()->has('failed'))
-    <div class="alert alert-danger">
-        {{ session()->get('failed') }}
-    </div>
-@endif
+
 
 <!-- main news feed starts-->
 
@@ -17,12 +13,22 @@
 <div class="container mt-5">
     {{-- flash message start --}}
         @if (session()->has('success'))
-            <div class="alert alert-dismissable alert-success">
-                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
+            <script>
+                setTimeout(function(){ $('.successMSG').fadeOut('fast'); }, 1000);
+            </script>
+            <div class="alert alert-success successMSG">
                 <strong>
                     {!! session()->get('success') !!}
+                </strong>
+            </div>
+        @endif
+        @if (session()->has('failed'))
+            <script>
+                setTimeout(function(){ $('.dangerMSG').fadeOut('fast'); }, 1000);
+            </script>
+            <div class="alert alert-danger dangerMSG">
+                <strong>
+                    {!! session()->get('failed') !!}
                 </strong>
             </div>
         @endif
