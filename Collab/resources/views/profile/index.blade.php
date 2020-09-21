@@ -187,14 +187,14 @@
             </div>
             <div class="projects">
                 @if($user->id == Auth::user()->id)
-                <a href="/profile/{{$user->name}}/add/project" class="btn research__btn active float-right " role="button" aria-pressed="true">Add New</a>
+                <a href="/profile/{{$user->id}}/add/project" class="btn research__btn active float-right " role="button" aria-pressed="true">Add New</a>
                 @endif
                 <h4>Projects</h4>
 
 
 
                 @forelse ($project as $item)
-                    <div class="row no-gutters projects__each mt-3" onclick="location.href='/profile/{{$user->name}}/project/{{$item->id}}';">
+                    <div class="row no-gutters projects__each mt-3" onclick="location.href='/profile/{{$user->id}}/project/{{$item->id}}';">
                         <div class="col-lg-3 projects__each__img">
 
                             @if ($item->thumbnail_image)
@@ -211,7 +211,7 @@
                             </h5>
                             <p>
                                 <!-- limit:40 words -->
-                                {{ str_limit($item->excerpt, 300, '...') }} <a href="/profile/{{$user->name}}/project/{{$item->id}}">more</a> </p>
+                                {{ str_limit($item->excerpt, 300, '...') }} <a href="/profile/{{$user->id}}/project/{{$item->id}}">more</a> </p>
                         </div>
                     </div>
                     <hr>

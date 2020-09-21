@@ -8,7 +8,7 @@
         <div class="col-sm-12 editorResearch__holder">
             <div class="row">
                 <div class="col-sm-12 editorResearch__holder__form">
-                    <form class="mt-3" action="/profile/{{Auth::user()->name}}/add/project" method="post" enctype="multipart/form-data">
+                    <form class="mt-3" action="/profile/{{Auth::user()->id}}/add/project" method="post" enctype="multipart/form-data">
                         @csrf
                         <div class="form-group basinInfoGroup">
                             <label for="thumbnailImg">Choose Thumbnail for your project</label>

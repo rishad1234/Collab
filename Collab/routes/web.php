@@ -44,12 +44,12 @@ Route::get('profile/research/download/{id}', 'ProfileController@downloadPDF')->n
 
 
 // Project Controller Routes
-Route::get('/profile/{user}/add/project', 'ProjectController@addProject');
-Route::post('/profile/{user}/add/project', 'ProjectController@postProject');
-Route::get('/profile/{user}/project/{id}', 'ProjectController@readProject');
-Route::get('/profile/{user}/edit/project/{id}', 'ProjectController@editProject');
+Route::get('/profile/{user_id}/add/project', 'ProjectController@addProject');
+Route::post('/profile/{user_id}/add/project', 'ProjectController@postProject');
+Route::get('/profile/{user_id}/project/{id}', 'ProjectController@readProject');
+Route::get('/profile/{user_id}/edit/project/{id}', 'ProjectController@editProject');
 Route::patch('/profile/edit/project/{id}', 'ProjectController@updateProject');
-Route::get('/profile/{user_name}/delete/project/{id}', 'ProjectController@deleteProject');
+Route::get('/profile/{user_id}/delete/project/{id}', 'ProjectController@deleteProject');
 
 
 //Interest Controller Routes

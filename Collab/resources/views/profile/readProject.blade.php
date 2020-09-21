@@ -33,8 +33,8 @@
 
 
             @forelse ($project as $item)
-                <a href="/profile/{{Auth::user()->name}}/edit/project/{{$item->id}}" class="btn btn-outline-dark edit_article"><i class="fas fa-edit"></i>  Edit</a>
-                <a href="/profile/{{Auth::user()->name}}/delete/project/{{$item->id}}" class="btn btn-outline-dark edit_article"><i class="fas fa-edit"></i>  Delete</a>
+                <a href="/profile/{{Auth::user()->id}}/edit/project/{{$item->id}}" class="btn btn-outline-dark edit_article"><i class="fas fa-edit"></i>  Edit</a>
+                <a href="/profile/{{Auth::user()->id}}/delete/project/{{$item->id}}" class="btn btn-outline-dark edit_article"><i class="fas fa-edit"></i>  Delete</a>
 
                 <h3> {{$item->title}} </h3>
 

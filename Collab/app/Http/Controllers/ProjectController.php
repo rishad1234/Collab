@@ -57,13 +57,13 @@ class ProjectController extends Controller
         return redirect()->route('profile.index', ['id' => Auth()->user()->id]);
     }
 
-    public function readProject($user, $id)
+    public function readProject($user_id, $id)
     {
         $project = \App\Project::where('id', $id)->get();
         return View('profile.readProject', compact('project'));
     }
 
-    public function editProject($user,$id)
+    public function editProject($user_id,$id)
     {
         $project = \App\Project::where('id', $id)->get();
         return View('profile.editProject', compact('project'));
@@ -108,7 +108,7 @@ class ProjectController extends Controller
         return redirect()->route('profile.index', ['user' => Auth()->user()->id]);
     }
 
-    public function deleteProject($user_name,$id)
+    public function deleteProject($user_id, $id)
     {
         $project = \App\Project::find($id);
         $project->delete();
