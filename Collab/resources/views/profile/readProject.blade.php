@@ -21,8 +21,15 @@
 
 
             @forelse ($project as $item)
-                <a href="/profile/{{Auth::user()->id}}/edit/project/{{$item->id}}" class="btn btn-outline-dark edit_article"><i class="fas fa-edit"></i>  Edit</a>
-                <a href="/profile/{{Auth::user()->id}}/delete/project/{{$item->id}}" class="btn btn-outline-dark edit_article"><i class="fas fa-edit"></i>  Delete</a>
+
+                @if($item->user_id == Auth::user()->id)
+                    <a href="/profile/{{Auth::user()->id}}/edit/project/{{$item->id}}" class="btn btn-outline-dark edit_article"><i class="fas fa-edit"></i>  Edit</a>
+                    <a href="/profile/{{Auth::user()->id}}/delete/project/{{$item->id}}" class="btn btn-outline-dark edit_article"><i class="fas fa-edit"></i>  Delete</a>
+                @else
+                    
+                @endif
+                
+                
                 <div style="background:#f8f9fa; border-radius:10px; padding: 10px;" class="mt-3">
                     <h3> {{$item->title}} </h3>
                     <p> {!!$item->description!!} </p>

@@ -12,9 +12,15 @@
 
                 <p> {{$item->description}} </p>
 
+                
+
                 <a href="/storage/{{$item->document}}" class="btn btn-outline-dark">Read Document</a>
-                <a href="/profile/{{Auth::user()->id}}/delete/research/{{$item->id}}" class="btn btn-outline-dark edit_article"><i class="fas fa-edit"></i>  Delete</a>
-            @empty
+                @if($item->user_id == Auth::user()->id)
+                    <a href="/profile/{{Auth::user()->id}}/delete/research/{{$item->id}}" class="btn btn-outline-dark edit_article"><i class="fas fa-edit"></i>  Delete</a>
+                @else
+                    
+                @endif
+                @empty
                 
             @endforelse
             
