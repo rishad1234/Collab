@@ -26,7 +26,7 @@ class ProjectController extends Controller
         $project->description = request('description');
 
         $data = request()->validate([
-            'title' => 'required',
+            'title' => 'required | max:255',
             'description' => 'required',
             'excerpt' => 'required',
             'thumbnail_image' => 'file|image|max:10000'
@@ -80,7 +80,7 @@ class ProjectController extends Controller
         $project[0]->description = request('description');
 
         $data = request()->validate([
-            'title' => 'required',
+            'title' => 'required | max:255',
             'description' => 'required',
             'excerpt' => 'required',
             'thumbnail_image' => 'file|image|max:10000'

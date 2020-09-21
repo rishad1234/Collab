@@ -36,10 +36,10 @@ class ProfileController extends Controller
     public function updateInfo(\App\User $user)
     {
         $data = request()->validate([
-            'name' => 'required',
-            'designation' => 'required',
-            'country' => 'required',  
-            'institution_name' => 'required'
+            'name' => 'required | max:255',
+            'designation' => 'required | max:255',
+            'country' => 'required | max:255',  
+            'institution_name' => 'required | max:255'
         ]);
 
         if(request()->hasFile('profile_image')){

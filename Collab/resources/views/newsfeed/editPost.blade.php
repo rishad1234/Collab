@@ -20,7 +20,7 @@
                 <a href="/delete/posts/{{$post[0]->id}}" class="btn btn-outline-dark"> Delete</a>
                 <h4 class="mt-3">Edit Status</h4>
                 <div class="form-group">
-                    <textarea class="form-control" id="message-text" placeholder="Enter your status" name="status" >{{ $post[0]->status }}</textarea>
+                    <textarea style="height:200px;" class="form-control" id="message-text" placeholder="Enter your status" name="status" >{{ $post[0]->status }}</textarea>
                     @error('status')
                     <p>{{$message}}</p>
                     @enderror

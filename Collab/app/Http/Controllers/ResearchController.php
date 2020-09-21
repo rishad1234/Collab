@@ -26,7 +26,7 @@ class ResearchController extends Controller
         $research->description = request('description');
 
         $data = request()->validate([
-            'title' => 'required',
+            'title' => 'required | max:255',
             'description' => 'required',
             'document' => 'required|file|max:10000'
         ]);
