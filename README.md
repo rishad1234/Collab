@@ -107,4 +107,6 @@ PUSHER_APP_CLUSTER=mt1
 
 `php artisan db:seed`
 
+`npm run dev`
+
 `php artisan serve` 
