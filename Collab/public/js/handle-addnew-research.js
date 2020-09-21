@@ -2,7 +2,7 @@
 let window_height = $(window).height();
 let window_width = $(window).width();
 let contentOfEditor; // stores the value of the editor(in html)
-let editor_height = 700;
+let editor_height = 500;
 
 // initializing the editor with specific height;
 $('.content').richText({

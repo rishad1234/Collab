@@ -13,19 +13,19 @@
                         @method('PATCH')
 
                         {{-- have a bug here.. can not edit thumbnail image. thats why this part is commented --}}
-                        <div class="form-group">
+                        <div class="form-group basinInfoGroup">
                             <label for="thumbnailImg">Choose Thumbnail for your project</label>
                             <input type="file" class="form-control-file" id="thumbnailImg" name="thumbnail_image">
                             
                         </div>
-                        <div class="form-group">
+                        <div class="form-group basinInfoGroup">
                             <label for="title">Enter Title</label>
                             <input type="text" class="form-control" id="title" placeholder="Enter Title" name="title" value="{{ $project[0]->title }}">
                             @error('title')
                                 <p style="color:red;font-weight:bold">{{$message}}</p>
                             @enderror
                         </div>
-                        <div class="form-group">
+                        <div class="form-group basinInfoGroup">
                             <label for="excerptArtcile">Enter Excerpt</label>
                             <textarea class="form-control" id="excerptArtcile" rows="5" maxlength="200" name="excerpt">{{ $project[0]->excerpt }}</textarea>
                             @error('excerpt')

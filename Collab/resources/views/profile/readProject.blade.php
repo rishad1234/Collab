@@ -17,7 +17,7 @@
             {{-- <button class="btn btn-outline-dark edit_article"><i class="fas fa-edit"></i> Edit</button> --}}
             {{-- <button type="button" class="btn btn-outline-dark remove_article"><i class="fas fa-trash-alt"></i> Remove</button> --}}
             {{-- <a href="/profile/delete/project/{{$project[0]->id}}" class="btn btn-outline-dark edit_article"><i class="fas fa-edit"></i>  Delete</a> --}}
-            <div class="researchTemplate__holder mt-3">
+            <div class="researchTemplate__holder mt-3 mb-3">
                 {{-- <img style="width:100%" src="{{ asset('storage/' . $project[0]->thumbnail_image) }}" alt=""> --}}
 
                 @if ($project[0]->thumbnail_image)
@@ -35,12 +35,11 @@
             @forelse ($project as $item)
                 <a href="/profile/{{Auth::user()->id}}/edit/project/{{$item->id}}" class="btn btn-outline-dark edit_article"><i class="fas fa-edit"></i>  Edit</a>
                 <a href="/profile/{{Auth::user()->id}}/delete/project/{{$item->id}}" class="btn btn-outline-dark edit_article"><i class="fas fa-edit"></i>  Delete</a>
-
-                <h3> {{$item->title}} </h3>
-
-                <p> {!!$item->description!!} </p>
-                {{-- <a href=" {{route('downloadFile', $item->id)}} " class="btn btn-outline-dark">Download PDF</a> --}}
-                {{-- <a href="/storage/{{$item->document}}" class="btn btn-outline-dark">Read Document</a> --}}
+                <div style="background:#f8f9fa; border-radius:10px; padding: 10px;" class="mt-3">
+                    <h3> {{$item->title}} </h3>
+                    <p> {!!$item->description!!} </p>
+                </div>
+                
             @empty
             
             @endforelse
