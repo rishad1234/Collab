@@ -118,8 +118,9 @@
                     </div>
                     <hr>
                 @empty
-                    <h5><p>no Research paper found</p></h5>
-
+                    <div style="margin-top:20px;background: #f8f9fa; padding: 10px; border-radius:10px;" class="">
+                        <h5>No research paper to show</h5>
+                    </div>
                 @endforelse
                 
 
@@ -216,7 +217,9 @@
                     </div>
                     <hr>
                 @empty
-                    <h5><p>no project found</p></h5>
+                    <div style="margin-top:20px;background: #f8f9fa; padding: 10px; border-radius:10px;" class="">
+                        <h5>No projects to show</h5>
+                    </div>
                 @endforelse
 
                 <!-- projeect - 1 -->
@@ -271,7 +274,9 @@
                         @forelse ($interest as $item)
                             <li>{{ $item->interest }}</li>
                         @empty
-                            <h5>no interest found</h5>   
+                            <div style="margin-top:20px;background: white; padding: 10px; border-radius:10px;" class="">
+                                <h5>No interests to show</h5>
+                            </div>
                         @endforelse
                         
                         {{-- <li>Machine Learning</li>
