@@ -8,7 +8,6 @@
                 </div>
                 <div class="contact">
                     <p class="name">{{ contact.name }}</p>
-                    <p class="email">{{ contact.email }}</p>
                 </div>
                 <span class="unread" v-if="contact.unread">{{ contact.unread }}</span>
             </li>
