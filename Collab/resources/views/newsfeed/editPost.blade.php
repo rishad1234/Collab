@@ -27,7 +27,9 @@
                 </div>
                 <div class="form-group">
                     <div class="imageInEdit">
-                        <img src="{{ asset('storage/' . $post[0]->image) }}" alt="">
+                        @if(isset($post[0]->image))
+                            <img src="{{ asset('storage/' . $post[0]->image) }}" alt="">
+                        @endif
                     </div>
                     @if(isset($post[0]->image))
                         <h4 class="mt-3">Edit Image File</h4>
