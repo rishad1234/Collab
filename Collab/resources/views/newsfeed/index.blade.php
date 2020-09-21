@@ -111,11 +111,11 @@ aria-hidden="true">
                         @else
                             <img src="/images/unisex-avatar.png" alt="">
                         @endif
-                        {{-- <img src="{{ asset('storage/' . $path) }}" alt=""> --}}
+
                     </div>
                     <div class="col-10 col-lg-11 autho_description pl-4">
                         <p class="autho_name"><a href="/profile/{{ $item->user_id }}">{{ $user_name }}</a></p>
-                        {{-- <p class="post_time">{{$item->created_at}}</p> --}}
+
                         <p class="post_time"> {{ Carbon\Carbon::parse($item->created_at)->format('F j, Y h:ia') }}</p>
                     </div>
                 </div>
@@ -133,33 +133,6 @@ aria-hidden="true">
 
                 </div>
                 @comments(['model' => $item])
-                <!-- comment starts -->
-                <!-- <div class="post_comments">
-
-                    <div class="comment_holder">
-                        <p class="commnet_author ">Rakib Ul Hasan</p>
-                        <p class="comment_body">Lorem ipsum dolor sit amet consectetur adipisicing elit. In omnis
-                            quam tempore tenetur? Sint cumque voluptatem provident!</p>
-                    </div>
-
-                    <div class="comment_input">
-                        <form>
-                            <div class="row">
-                                <div class="col-9 col-lg-10">
-                                    <div class="form-group">
-                                        <input type="text" class="form-control" id="CommentInput"
-                                            aria-describedby="CommentInputHelp" placeholder="comment">
-                                    </div>
-                                </div>
-                                <div class="col-3 send_com col-lg-2">
-                                    <button type="submit"
-                                        class="btn btn-outline-dark comment_send_btn">Send</button>
-                                </div>
-                            </div>
-                        </form>
-                    </div>
-                </div> -->
-                <!-- comment ends -->
             </div>
         @empty
             <div class="initNewsfeed">

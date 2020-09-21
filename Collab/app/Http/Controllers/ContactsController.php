@@ -12,10 +12,6 @@ class ContactsController extends Controller
 {
     public function get()
     {
-        // get all users except the authenticated one
-        // $contacts = User::where('id', '!=', auth()->id())->get();
-        // dd($contacts);
-
 
         ///////////////////////////////////////////
 
@@ -53,10 +49,8 @@ class ContactsController extends Controller
 
 
             return $contact;
-            // return view('/message');
         });
 
-        // dd($contacts);
         return response()->json($contacts);
     }
 

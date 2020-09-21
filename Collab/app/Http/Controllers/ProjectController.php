@@ -33,7 +33,6 @@ class ProjectController extends Controller
         ]);
 
         if(request()->hasFile('thumbnail_image')){
-            //dd("ok");
             request()->validate([
                 'thumbnail_image' => 'file|image|max:10000'
             ]);
@@ -87,7 +86,6 @@ class ProjectController extends Controller
         ]);
 
         if(request()->hasFile('thumbnail_image')){
-            //dd("ok");
             request()->validate([
                 'thumbnail_image' => 'file|image|max:10000'
             ]);
@@ -102,7 +100,6 @@ class ProjectController extends Controller
         if(request()->has('thumbnail_image')){
             $project[0]->thumbnail_image = request('thumbnail_image')->store('project_thumbnail_images', 'public');
         }
-        // dd($project[0]->thumbnail_image);
         $project[0]->update();
         session()->flash('success', 'Project Updated Successfully');
         return redirect()->route('profile.index', ['user' => Auth()->user()->id]);

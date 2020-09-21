@@ -22,20 +22,17 @@ class MiscController extends Controller
     }
     
     public function checkRole($role){
-        // dd($role);
         if(!Auth::check()){
             if($role == 1){
                 $data = [
                     'account_type' => 'Professor'
                 ];
-                //dd("professor");
                 return view('auth.register', ["data"=>$data]);
         
             }else if($role == 2){
                 $data = [
                     'account_type' => 'Student'
                 ];
-                //dd("student");
                 return view('auth.register', ["data"=>$data]);
             }else{
                 abort(404);

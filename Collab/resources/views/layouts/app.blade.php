@@ -50,9 +50,6 @@
                 <a class="navbar-brand" href="{{ url('/') }}">
                     Collab.
                 </a>
-                <!-- <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button> -->
 
                 <div >
                     
@@ -67,11 +64,6 @@
                                     <a class="nav-link" href="{{ route('signup') }}">{{ __('Sign up') }}</a>
                                 </li>
                             @endif
-                            {{-- @if (Route::has('register'))
-                                <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
-                                </li>
-                            @endif --}}
                         @else
                             <li class="nav-item dropdown">
                                 <span><a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>

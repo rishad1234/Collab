@@ -11,19 +11,12 @@
                 <h3> {{$item->title}} </h3>
 
                 <p> {{$item->description}} </p>
-                {{-- <a href=" {{route('downloadFile', $item->id)}} " class="btn btn-outline-dark">Download PDF</a> --}}
+
                 <a href="/storage/{{$item->document}}" class="btn btn-outline-dark">Read Document</a>
                 <a href="/profile/{{Auth::user()->id}}/delete/research/{{$item->id}}" class="btn btn-outline-dark edit_article"><i class="fas fa-edit"></i>  Delete</a>
             @empty
                 
             @endforelse
-
-            {{-- <h3>Title of the Research Paper</h3>
-            <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo quidem dolorem officiis natus provident laborum voluptatibus eos quis repellat! Rerum magni cumque corporis exercitationem voluptas dolores modi quam aliquid est fugiat, assumenda quae consectetur quidem laborum! Repellat esse sit expedita aliquid aperiam est corrupti asperiores veniam ipsum. Omnis quas, laboriosam perspiciatis illo nobis odio voluptatum voluptatibus sit fugiat adipisci magni distinctio error, nulla similique unde id veritatis illum et quae dolores voluptas. Exercitationem quos ut alias aspernatur pariatur dolore voluptate cupiditate ea neque reiciendis cumque, quam soluta eligendi nulla sint quas natus earum temporibus et excepturi eum incidunt facere. Consequatur qui molestias dolore vero.
-                <br>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga, voluptate nulla dolorem vero adipisci pariatur quidem, nobis sequi quis nemo quae distinctio esse, nisi praesentium accusamus eum nostrum aspernatur numquam! Quibusdam facere vitae eius similique adipisci perspiciatis sint corporis asperiores voluptates consequatur et exercitationem nostrum autem dolor minus delectus eum odio sed cum quisquam non rerum, repellendus hic! Aliquid reiciendis neque libero voluptate molestias.
-            </p> --}}
             
         </div>
     </div>

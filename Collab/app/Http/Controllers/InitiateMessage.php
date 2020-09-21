@@ -30,9 +30,6 @@ class InitiateMessage extends Controller
 
         broadcast(new NewMessage($message));
 
-        // return response()->json($message);
-        // dd($message);
-        //return redirect()->route('initiate.send');
         return redirect()->route('profile.index', ['id' => Auth()->user()->id]);
     }
 }

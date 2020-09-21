@@ -13,7 +13,6 @@
             <div class="collapse navbar-collapse navbar__menu" id="navbarNav">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item">
-                        <!-- <a class="nav-link" href="profile.html">Robert C. Merton</a> -->
                     </li>
                 </ul>
             </div>

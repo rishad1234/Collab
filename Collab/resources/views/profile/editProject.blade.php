@@ -12,7 +12,6 @@
                         @csrf
                         @method('PATCH')
 
-                        {{-- have a bug here.. can not edit thumbnail image. thats why this part is commented --}}
                         <div class="form-group basinInfoGroup">
                             <label for="thumbnailImg">Choose Thumbnail for your project</label>
                             <input type="file" class="form-control-file" id="thumbnailImg" name="thumbnail_image">

@@ -27,7 +27,7 @@
             <!-- intro - information -->
             <div class="containIntroInfo">
                 <div class="containIntroInfo__coverImg">
-                    {{-- <img src="/images/profile-cover-img.jpg" alt=""> --}}
+                    
 
                     @if ($user->cover_image)
                         <img src=" {{ asset('storage/' . $user->cover_image) }}" alt="">
@@ -132,67 +132,6 @@
                 @endforelse
                 
 
-                {{-- for now we dont need this static research design.
-                commenting it out for future need --}}
-
-                {{-- <h4>Research</h4>
-                <!-- research - 1 -->
-                <div class="row no-gutters research__each mt-3" onclick="location.href='research-project-template-me.html';">
-                    <div class="col-lg-3 research__each__img">
-                        <img src="/images/research-img.jpg" alt="">
-                    </div>
-                    <div class="col-lg-9 research__each__info">
-                        <h5>
-                            <!-- limit: 8 words -->
-                            Title of research / published paper
-                        </h5>
-                        <p>
-                            <!-- limit:40 words -->
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat culpa illo quaerat quis
-                            ratione earum pariatur, sunt eaque nihil deleniti porro reiciendis dolorem, voluptatum
-                            odit tempore perspiciatis eos reprehenderit deserunt numquam recusandae incidunt
-                            nesciunt saepe eius. Adipisci, dolorem provident. Expedita. <a href="research-project-template-me.html">more</a> </p>
-                    </div>
-                </div>
-                <hr>
-                <!-- research - 2 -->
-                <div class="row no-gutters research__each mt-3" onclick="location.href='research-project-template-me.html';">
-                    <div class="col-lg-3 research__each__img">
-                        <img src="/images/research-02.jpg" alt="">
-                    </div>
-                    <div class="col-lg-9 research__each__info">
-                        <h5>
-                            <!-- limit: 8 words -->
-                            Title of research / published paper
-                        </h5>
-                        <p>
-                            <!-- limit:40 -->
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat culpa illo quaerat quis
-                            ratione earum pariatur, sunt eaque nihil deleniti porro reiciendis dolorem, voluptatum
-                            odit tempore perspiciatis eos reprehenderit deserunt numquam recusandae incidunt
-                            nesciunt saepe eius. Adipisci, dolorem provident. Expedita. <a href="research-project-template-me.html">more</a> </p>
-                    </div>
-                </div>
-                <hr>
-                <!-- research - 3 -->
-                <div class="row no-gutters research__each mt-3" onclick="location.href='research-project-template-me.html';">
-                    <div class="col-lg-3 research__each__img">
-                        <img src="/images/research-03.jpg" alt="">
-                    </div>
-                    <div class="col-lg-9 research__each__info">
-                        <h5>
-                            <!-- limit: 8 words -->
-                            Title of research / published paper
-                        </h5>
-                        <p>
-                            <!-- limit:40 -->
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat culpa illo quaerat quis
-                            ratione earum pariatur, sunt eaque nihil deleniti porro reiciendis dolorem, voluptatum
-                            odit tempore perspiciatis eos reprehenderit deserunt numquam recusandae incidunt
-                            nesciunt saepe eius. Adipisci, dolorem provident. Expedita. <a href="research-project-template-me.html">more</a> </p>
-                    </div>
-                </div>
-                <hr> --}}
             </div>
             <div class="projects">
                 @if($user->id == Auth::user()->id)
@@ -230,44 +169,6 @@
                     </div>
                 @endforelse
 
-                <!-- projeect - 1 -->
-                {{-- <div class="row no-gutters projects__each mt-3" onclick="location.href='research-project-template-me.html';">
-                    <div class="col-lg-3 projects__each__img">
-                        <img src="/images/project-img.jpg" alt="">
-                    </div>
-                    <div class="col-lg-9 projects__each__info">
-                        <h5>
-                            <!-- limit: 8 words -->
-                            Title of Project
-                        </h5>
-                        <p>
-                            <!-- limit:40 words -->
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat culpa illo quaerat quis
-                            ratione earum pariatur, sunt eaque nihil deleniti porro reiciendis dolorem, voluptatum
-                            odit tempore perspiciatis eos reprehenderit deserunt numquam recusandae incidunt
-                            nesciunt saepe eius. Adipisci, dolorem provident. Expedita. <a href="research-project-template-me.html">more</a> </p>
-                    </div>
-                </div>
-                <hr>
-                <!-- projeect - 2 -->
-                <div class="row no-gutters projects__each mt-3" onclick="location.href='research-project-template-me.html';">
-                    <div class="col-lg-3 projects__each__img">
-                        <img src="/images/project-img.jpg" alt="">
-                    </div>
-                    <div class="col-lg-9 projects__each__info">
-                        <h5>
-                            <!-- limit: 8 words -->
-                            Title of Project
-                        </h5>
-                        <p>
-                            <!-- limit:40 words -->
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat culpa illo quaerat quis
-                            ratione earum pariatur, sunt eaque nihil deleniti porro reiciendis dolorem, voluptatum
-                            odit tempore perspiciatis eos reprehenderit deserunt numquam recusandae incidunt
-                            nesciunt saepe eius. Adipisci, dolorem provident. Expedita. <a href="research-project-template-me.html">more</a> </p>
-                    </div>
-                </div>
-                <hr> --}}
             </div>
         </div>
         <div class="col-sm-4">
@@ -287,24 +188,6 @@
                             </div>
                         @endforelse
                         
-                        {{-- <li>Machine Learning</li>
-                        <li>Artificial Intelligent</li>
-                        <li>Algorithm</li>
-                        <li>Data Science</li>
-                        <li>Image Processing</li>
-                        <li>Internet of things</li>
-                        <li>Machine Learning</li>
-                        <li>Artificial Intelligent</li>
-                        <li>Algorithm</li>
-                        <li>Data Science</li>
-                        <li>Image Processing</li>
-                        <li>Internet of things</li>
-                        <li>Machine Learning</li>
-                        <li>Artificial Intelligent</li>
-                        <li>Algorithm</li>
-                        <li>Data Science</li>
-                        <li>Image Processing</li>
-                        <li>Internet of things</li> --}}
                     </ul>
                 </div>
 

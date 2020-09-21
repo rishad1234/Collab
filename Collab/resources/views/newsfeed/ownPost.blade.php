@@ -58,7 +58,6 @@ aria-hidden="true">
                 </div>
                 <div class="modal-footer">
                     <button class="btn btn-outline-dark" type="submit">Post</button>
-                    {{-- <a href="#" class="btn btn-outline-dark" role="button" aria-disabled="true"  data-dismiss="modal">Post</a> --}}
                 </div>
             </form>
         </div>

@@ -33,7 +33,6 @@ class ResearchController extends Controller
 
 
         if(request()->hasFile('document')){
-            //dd("ok");
             request()->validate([
                 'document' => 'required|file|max:10000'
             ]);

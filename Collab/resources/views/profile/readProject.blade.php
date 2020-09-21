@@ -8,25 +8,13 @@
         <div class="col-sm-12">
 
 
-            {{-- <form action="">
-                @csrf
-                <button class="btn btn-outline-dark edit_article"><i class="fas fa-edit"></i> Edit</button>
-            </form> --}}
-            
-
-            {{-- <button class="btn btn-outline-dark edit_article"><i class="fas fa-edit"></i> Edit</button> --}}
-            {{-- <button type="button" class="btn btn-outline-dark remove_article"><i class="fas fa-trash-alt"></i> Remove</button> --}}
-            {{-- <a href="/profile/delete/project/{{$project[0]->id}}" class="btn btn-outline-dark edit_article"><i class="fas fa-edit"></i>  Delete</a> --}}
             <div class="researchTemplate__holder mt-3 mb-3">
-                {{-- <img style="width:100%" src="{{ asset('storage/' . $project[0]->thumbnail_image) }}" alt=""> --}}
 
                 @if ($project[0]->thumbnail_image)
                     <img style="width:100%" src=" {{ asset('storage/' . $project[0]->thumbnail_image) }}" alt="">
                 @else
                     <img style="width:100%" src="/images/project-img.jpg" alt="">
                 @endif
-                {{-- <br><br> --}}
-                {{-- <h3>Title of research paper/ published paper/ projects</h3> --}}
                 
                 
             </div>
@@ -43,12 +31,9 @@
             @empty
             
             @endforelse
-            {{-- <textarea id="editor_edit" class="content" name="example"></textarea>
-            <button type="button" class="btn btn-outline-dark submit-after-edit mt-3">Save</button> --}}
+
         </div>
-        <!-- <div class="col-sm-5">
-            <button type="button" class="btn btn-outline-dark getValEditor mt-3 mb-5">Submit</button>
-        </div> -->
+
     </div>
 </div>
 

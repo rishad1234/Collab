@@ -41,9 +41,6 @@
                     <p>{{$message}}</p>
                     @enderror
                 </div>
-                <!-- <div class="modal-footer">
-                    <button class="btn btn-outline-dark" type="submit">Update</button>
-                </div> -->
             </form>
             
         </div>

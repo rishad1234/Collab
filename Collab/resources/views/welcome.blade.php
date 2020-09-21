@@ -20,10 +20,7 @@
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <div class="container">
                 <a class="navbar-brand" href="{{route('signup')}}">Collab.</a>
-                <!-- <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
-                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button> -->
+
                 <div>
                     <ul class="navbar-nav ml-auto">
                         <li class="nav-item">
@@ -41,17 +38,7 @@
                         <div class="landingCover__left__block">
                             <p>A platform that helps to create collaborations between professors and students according to their field of interests by helping them to create an individual profile, an organised news feed and communication methods.</p>
                         </div>
-                        {{-- <form action="{{route('signup_valid')}}" method="POST">
-                            @csrf
-                            <input type="hidden" name="signup_check" value="professor">
 
-                            <button type="submit" class="btn btn-lg landingCover__left--registerTeacher" role="button" aria-pressed="true">Sign up as professor</button>
-                        </form>
-                        <form action="{{route('signup_valid')}}" method="POST">
-                            @csrf
-                            <input type="hidden" name="signup_check" value="student">
-                            <button type="submit" class="btn btn-lg landingCover__left--registerStudent extraStudnet" role="button" aria-pressed="true">Sign up as student</button>
-                        </form> --}}
                         <a href="/registerpage/1" class="btn btn-lg landingCover__left--registerTeacher">Sign up as professor</a>
                         <a href="/registerpage/2" class="btn btn-lg landingCover__left--registerStudent ">Sign up as Student</a>
                     </div>

@@ -37,29 +37,12 @@ class NewsfeedController extends Controller
         $status->status = request('status');
         $status->image = request('image');
 
-        // $data = request();
-
-        // if(request()->hasFile('image')){
-        //     //dd("ok");
-        //     request()->validate([
-        //         'image' => 'required|file|max:10000'
-        //     ]);
-        // }
-
-        // if(request()->has('image')){
-        //     $status->save([
-        //         'image' => request()->image->store('status_image', 'public'),
-        //     ]);
-        // }
-
         if (request()->has('image')) {
             $status->image = request('image')->store('status_image', 'public');
         }
         if (request()->has('status')) {
             $status->status = request('status');
         }
-        // $status->status = request('status');
-        // $status->image = request('image')->store('status_image', 'public');
 
         if (request()->has('image') || $status->status != "") {
             $status->save();
@@ -94,9 +77,6 @@ class NewsfeedController extends Controller
         $status->status = request('status');
         $prev_image = $status->image; 
         $status->image = request('image');
-
-        // dd($prev_image);
-
 
         if (request()->has('image')) {
             $status->image = request('image')->store('status_image', 'public');
