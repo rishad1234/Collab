@@ -15,6 +15,18 @@
 
 <!-- start status -->
 <div class="container mt-5">
+    {{-- flash message start --}}
+        @if (session()->has('success'))
+            <div class="alert alert-dismissable alert-success">
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                <strong>
+                    {!! session()->get('success') !!}
+                </strong>
+            </div>
+        @endif
+    {{-- flash message end --}}
 <div class="row">
     <div class="col-md-2"></div>
     <div class="col-md-8">
